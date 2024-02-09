@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:ledbox;assembly=ledbox"
+             xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+             x:Class="ledbox.ActivityView"
+             Title="{i18n:Translate activity}"
+            ControlTemplate="{StaticResource LedboxTemplate}"
+            BackgroundColor="#F5A800" >
+
+            <NavigationPage.TitleView>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{i18n:Translate  activity}" Style="{StaticResource lbl_Title}"/>
+                    <!--<Label Text="Queste sono le attività in esecuzione sul LEDbox" Style="{StaticResource lbl_SubTitle}"/>-->
+                </StackLayout>
+            </NavigationPage.TitleView>
+            <ContentPage.ToolbarItems></ContentPage.ToolbarItems> 
+
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.92*" />
+            <RowDefinition Height="0.08*" />
+        </Grid.RowDefinitions>
+
+        <Image Style="{StaticResource bg_imageStyle}"></Image>
+
+        <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
+            <ListView  x:Name="lstView" Grid.Row="0" RowHeight="70"
+                   Style="{StaticResource ListViewStyle}"                    
+                   ItemsSource="{Binding OActivity}"
+                   >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Frame Style="{StaticResource CellFrameStyle}">
+                                <StackLayout Style="{StaticResource CellStackStyle}" >
+                                    <Frame Style="{StaticResource BarFrameStyle}" BackgroundColor="#52534A"></Frame>
+                                    <!--<Image  Source="{Binding Icon}" ></Image>-->
+                                    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" >
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="StartAndExpand">
+                                            <Label Text = "{Binding title}" Style="{StaticResource Title_CellStackStyle}" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand">
+                                                <Label Text = "{Binding Type}" Style="{StaticResource SubTitle_CellStackStyle}" HorizontalOptions="Start"/>
+                                         </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Margin="0,0,10,0">
+                                        <Button ImageSource="{Binding iconStatus}" Command="{Binding PlayPauseCommand}" BackgroundColor="#52534A"
+                                                Style="{StaticResource rounded_buttonStyle}" WidthRequest="40"  Margin="0" />
+                                        <Button ImageSource="ic_stop_white_24dp" Command="{Binding StopCommand}" BackgroundColor="#52534A"
+                                                Style="{StaticResource rounded_buttonStyle}" WidthRequest="40"  Margin="0" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" BackgroundColor="Transparent" Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Image="ic_stop_white_24dp" Text="STOP ALL" Clicked="Stop_clicked" Style="{StaticResource rounded_buttonStyle}" BackgroundColor="#52534A"
+                    Margin="0" HorizontalOptions="Center"/>
+        </StackLayout>
+
+    </Grid>
+    
+</ContentPage>

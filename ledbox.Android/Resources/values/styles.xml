@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MainTheme" parent="MainTheme.Base">
+    </style>
+    <!-- Base theme applied no matter what API -->
+    <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
+        <item name="windowNoTitle">true</item>
+        <!--We will be using the toolbar so no need to show ActionBar-->
+        <item name="windowActionBar">false</item>
+        <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">#52534A</item>
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">#52534A</item>
+        <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+       <item name="colorAccent">#F5A800</item>    
+      <!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight and colorSwitchThumbNormal. -->
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+    </style>
+    <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">#52534A</item>
+      <item name="android:colorBackground">#52534A</item>
+      <!--  <item name="colorAccent">#F5A800</item> -->
+    </style> 
+    <style name="MyTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+      <item name="android:windowFullscreen">false</item>
+      <item name="windowActionBar">true</item>
+      <item name="windowActionModeOverlay">true</item>
+      <item name="colorPrimary">#52534A</item>
+      <!-- colore pulsanti dialog -->
+      <item name="colorAccent">#F5A800</item>
+      <!-- colore controllo evidenziato -->
+      <item name="colorControlActivated">#52534A</item>
+      <!-- colore pressione pulsanti -->
+      <item name="colorControlHighlight">#F5A800</item>      
+    </style>
+    <style name="MyTheme" parent="MyTheme.Base"> </style>
+    <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+
+    </style>
+  
+</resources>

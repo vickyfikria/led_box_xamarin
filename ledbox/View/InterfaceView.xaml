@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ledbox.InterfaceView"
+     xmlns:local="clr-namespace:ledbox;assembly=ledbox"
+     ControlTemplate="{StaticResource LedboxTemplate}"
+    BackgroundColor="#ACAD8F"
+    NavigationPage.HasBackButton="False"    
+    >
+
+    <NavigationPage.TitleView>                
+                
+             
+            <StackLayout Orientation="Horizontal" >
+                <Button Image="ic_arrow_back_white_24dp"   Clicked="BackButton" Style="{StaticResource btn_Back}"/>
+                <Label x:Name="TitleInterface" Text="" Style="{StaticResource lbl_Title}" />
+            </StackLayout>     
+                
+
+                              
+    </NavigationPage.TitleView>
+    
+
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="refresh" Icon="ic_loop_white_24dp.png"  />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <local:WebViewer x:Name="wview" AllowFileAccess="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+    </ContentPage.Content>
+</ContentPage>

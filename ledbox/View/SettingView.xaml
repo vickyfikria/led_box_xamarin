@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+             x:Class="ledbox.SettingView"
+             ControlTemplate="{StaticResource LedboxTemplateNoStatusBar}"
+             Title="{i18n:Translate setting}"            
+             BackgroundColor="#72736d" >
+    
+            <NavigationPage.TitleView>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{i18n:Translate setting}" Style="{StaticResource lbl_Title}"/>
+                </StackLayout>
+            </NavigationPage.TitleView>
+            <ContentPage.ToolbarItems>
+                <ToolbarItem Icon="ic_save_white_24dp.png" Text="Salva" Clicked="Bt_Save_Clicked" />
+            </ContentPage.ToolbarItems>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Image  Style="{StaticResource bg_Style}" ></Image>
+
+        <ScrollView>
+            <StackLayout Orientation="Vertical" x:Name="panel" IsEnabled="false" Margin="20,0">
+
+                <StackLayout Orientation="Horizontal" Margin="0,-5,0,0">
+                    <Label Text="LEDBox " TextColor="#F5A800" FontSize="Medium" FontAttributes="Bold"  HorizontalTextAlignment="Start"  />
+                    <Label Text=""  TextColor="#F5A800" x:Name="serialnumber" FontSize="Medium"  HorizontalTextAlignment="Start" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,-5,0,0">
+                    <Label Text="{i18n:Translate version} " TextColor="#99FFFFFF" FontSize="Small"  HorizontalTextAlignment="Start"  />
+                    <Label Text="" x:Name="version" TextColor="#99FFFFFF" FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="EndAndExpand"  VerticalOptions="Center"  />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,-10,0,0">
+                    <Label Text="{i18n:Translate ip_lan} " TextColor="#99FFFFFF" FontSize="Small" HorizontalTextAlignment="Start"  />
+                    <Label Text="" x:Name="ip_lan" TextColor="#99FFFFFF" FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="EndAndExpand"  VerticalOptions="Center"  />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,-10,0,5">
+                    <Label Text="{i18n:Translate ip_wifi} " TextColor="#99FFFFFF" FontSize="Small" HorizontalTextAlignment="Start"  />
+                    <Label Text="" x:Name="ip_wifi" TextColor="#99FFFFFF" FontSize="Small" HorizontalTextAlignment="Start" HorizontalOptions="EndAndExpand"  VerticalOptions="Center"  />
+                </StackLayout>
+
+                
+
+                <Label Text="{i18n:Translate wifi_modality}"  TextColor="#99FFFFFF" FontSize="Small" FontAttributes="Bold"  HorizontalTextAlignment="Start" Margin="0,5,0,-5" />
+                <Frame Style="{StaticResource CellFrameStyle}" Margin="0" Padding="5" HorizontalOptions="FillAndExpand">
+                    <StackLayout  VerticalOptions="Center" >
+
+                        <Picker x:Name="wifi_mode" SelectedIndex="0" SelectedIndexChanged="mode_SelectedIndexChanged"  TextColor="Black">
+                            <Picker.Items>
+                                <x:String>Wi-Fi Direct</x:String>
+                                <x:String>Wi-Fi Client</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <StackLayout x:Name="wifi_ssid_panel">
+                            <Label Text="SSID"  VerticalOptions="Center" Margin="0,0,0,-5" />
+                            <Frame Style="{StaticResource CellFrameStyle}" Margin="0">
+                                <Entry x:Name="wifi_ssid"  HorizontalOptions="FillAndExpand" BackgroundColor="#99E5E5E5" TextColor="Black"></Entry>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout x:Name="wifi_psk_panel" >
+                            <Label Text="Password"  VerticalOptions="Center" Margin="0,0,0,-5" />
+                            <Frame Style="{StaticResource CellFrameStyle}" Margin="0">
+                                <Entry x:Name="wifi_psk"  HorizontalOptions="FillAndExpand" BackgroundColor="#99E5E5E5" TextColor="Black"></Entry>
+                            </Frame>
+                        </StackLayout>
+
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="{i18n:Translate network_modality}"  TextColor="#99FFFFFF" FontSize="Small" FontAttributes="Bold"  HorizontalTextAlignment="Start" Margin="0,5,0,-5" />
+                <Frame Style="{StaticResource CellFrameStyle}" Margin="0" Padding="5" HorizontalOptions="FillAndExpand">
+                    <StackLayout  VerticalOptions="Center" >
+
+                        <Picker x:Name="network_mode" SelectedIndex="0" SelectedIndexChanged="mode_network_SelectedIndexChanged"  TextColor="Black">
+                            <Picker.Items>
+                                <x:String>DHCP</x:String>
+                                <x:String>IP static</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <StackLayout x:Name="network_ip_static_panel">
+                            <Label Text="IP"  VerticalOptions="Center" Margin="0,0,0,-5" />
+                            <Frame Style="{StaticResource CellFrameStyle}" Margin="0">
+                                <Entry x:Name="network_ip"  HorizontalOptions="FillAndExpand" BackgroundColor="#99E5E5E5" TextColor="Black"></Entry>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout x:Name="network_subnet_static_panel">
+                            <Label Text="SUBNET"  VerticalOptions="Center" Margin="0,0,0,-5" />
+                            <Frame Style="{StaticResource CellFrameStyle}" Margin="0">
+                                <Entry x:Name="network_subnet"  HorizontalOptions="FillAndExpand" BackgroundColor="#99E5E5E5" TextColor="Black"></Entry>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout x:Name="network_gateway_static_panel">
+                            <Label Text="GATEWAY"  VerticalOptions="Center" Margin="0,0,0,-5" />
+                            <Frame Style="{StaticResource CellFrameStyle}" Margin="0">
+                                <Entry x:Name="network_gateway"  HorizontalOptions="FillAndExpand" BackgroundColor="#99E5E5E5" TextColor="Black"></Entry>
+                            </Frame>
+                        </StackLayout>
+
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="{i18n:Translate advanced_function_ledbox}"  TextColor="#99FFFFFF" FontSize="Small" FontAttributes="Bold" Margin="0,5,0,-5" />
+                <Frame Style="{StaticResource CellFrameStyle}" Margin="0" Padding="5,15" BackgroundColor="#33E5E5E5" BorderColor="#99E5E5E5">
+                    <StackLayout>
+                        <Label Text="{i18n:Translate mode_execute}" TextColor="#99FFFFFF" FontSize="Small" FontAttributes="Bold"  HorizontalTextAlignment="Start" Margin="0,5,0,-5" />
+                        <Frame Style="{StaticResource CellFrameStyle}" Margin="0" Padding="5" HorizontalOptions="FillAndExpand" >
+                            <StackLayout  VerticalOptions="Center" >
+
+                                <Picker x:Name="mode_execute" SelectedIndex="0" SelectedIndexChanged="mode_execute_SelectedIndexChanged" TextColor="Black">
+                                    <Picker.Items>
+                                        <x:String>Master</x:String>
+                                        <x:String>Slave</x:String>
+                                    </Picker.Items>
+                                </Picker>
+
+                                <StackLayout x:Name="ip_master_panel">
+                                    <Label Text="IP (master)"  VerticalOptions="Center" Margin="0,0,0,-5" />
+                                    <Frame Style="{StaticResource CellFrameStyle}" Margin="0">
+                                        <Entry x:Name="ip_master"  HorizontalOptions="FillAndExpand" BackgroundColor="#99E5E5E5"  TextColor="Black"></Entry>
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+                        <Label Text="{i18n:Translate modifier_layout}"  TextColor="#99FFFFFF" FontSize="Small" FontAttributes="Bold"  HorizontalTextAlignment="Start" Margin="0,5,0,-5" />
+                        <Frame Style="{StaticResource CellFrameStyle}" Margin="0" Padding="5" HorizontalOptions="FillAndExpand">
+                            <StackLayout  VerticalOptions="Center" >
+
+                                <Picker x:Name="modifier" SelectedIndex="0"  TextColor="Black">
+                                    <Picker.Items>
+                                        <x:String>None</x:String>
+                                        <x:String>Specular</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+                <Label Text="{i18n:Translate memory_ledbox}"  TextColor="#99FFFFFF" FontSize="Small" FontAttributes="Bold" Margin="0,5,0,-5" />
+                <Frame Style="{StaticResource CellFrameStyle}" Margin="0" Padding="5,15" BackgroundColor="#33E5E5E5" BorderColor="#99E5E5E5">
+                    <StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                            <Label Text="{i18n:Translate playlist_imagevideo}" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0" TextColor="#99E5E5E5"></Label>
+                            <Button Text="{i18n:Translate trash}" Clicked="DeletePlaylistImage" Style="{StaticResource rounded_buttonStyle}" HorizontalOptions="EndAndExpand"
+                            VerticalOptions="EndAndExpand" BackgroundColor="DarkRed" Margin="0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                            <Label Text="{i18n:Translate playlist_audio}" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0" TextColor="#99E5E5E5"></Label>
+                            <Button Text="{i18n:Translate trash}" Clicked="DeletePlaylistAudio" Style="{StaticResource rounded_buttonStyle}" HorizontalOptions="EndAndExpand"
+                            VerticalOptions="EndAndExpand" BackgroundColor="DarkRed" Margin="0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                            <Label Text="{i18n:Translate match_score}" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0" TextColor="#99E5E5E5"></Label>
+                            <Button Text="{i18n:Translate trash}" Clicked="DeleteMatchscore" Style="{StaticResource rounded_buttonStyle}" HorizontalOptions="EndAndExpand"
+                            VerticalOptions="EndAndExpand" BackgroundColor="DarkRed" Margin="0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                            <Label Text="{i18n:Translate practice}" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0" TextColor="#99E5E5E5"></Label>
+                            <Button Text="{i18n:Translate trash}" Clicked="DeletePractice" Style="{StaticResource rounded_buttonStyle}" HorizontalOptions="EndAndExpand"
+                            VerticalOptions="EndAndExpand" BackgroundColor="DarkRed" Margin="0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                            <Label Text="{i18n:Translate trash_all_media}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0" TextColor="#99E5E5E5"></Label>
+                            <Button Text="{i18n:Translate trash}" Clicked="DeleteMedia" Style="{StaticResource rounded_buttonStyle}" HorizontalOptions="EndAndExpand"
+                            VerticalOptions="EndAndExpand" BackgroundColor="DarkRed" Margin="0"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="{i18n:Translate ledbox_functions}"  TextColor="#99FFFFFF" FontSize="Small" FontAttributes="Bold" Margin="0,5,0,-5" />
+                <Frame Style="{StaticResource CellFrameStyle}" Margin="0" Padding="5,15" BackgroundColor="#33E5E5E5" BorderColor="#99E5E5E5">
+                    <StackLayout Margin="15,0">
+                        <Button Text="{i18n:Translate update_to}" x:Name="btn_update" Clicked="updateLedbox" Margin="0,10,0,0" Style="{StaticResource rounded_buttonStyle}" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="EndAndExpand" BackgroundColor="#F5A800"/>
+                        <Button IsVisible="false" x:Name="btn_restart_dhcp" Text="{i18n:Translate restart_dhcp}" Clicked="restartDHCP" Margin="0,10,0,0" Style="{StaticResource rounded_buttonStyle}" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="EndAndExpand" BackgroundColor="#F5A800"/>
+                        <Button Text="{i18n:Translate reboot}" Clicked="restartLedbox" Margin="0,10,0,0" Style="{StaticResource rounded_buttonStyle}" HorizontalOptions="FillAndExpand"
+                            VerticalOptions="EndAndExpand" BackgroundColor="#F5A800"/>
+                    </StackLayout>
+                </Frame>
+                
+            </StackLayout>
+        </ScrollView>
+
+    </Grid>
+    
+</ContentPage>

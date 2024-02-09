@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ledbox.CustomView"
+             xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+             xmlns:cp="clr-namespace:Xam.Plugin.SimpleColorPicker;assembly=Xam.Plugin.SimpleColorPicker"
+             ControlTemplate="{StaticResource LedboxTemplate}"
+             BackgroundColor="IndianRed"             
+             Title="{Binding customText.Title}"
+             >
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Vertical">
+            <Label Text="{Binding customText.Title}" Style="{StaticResource lbl_Title}"/>
+            <!--<Label Text="" Style="{StaticResource lbl_SubTitle}" />-->
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+       <ToolbarItem Clicked="ChangeTitle_Clicked" Icon="ic_edit_white_24dp.png"  />        
+    </ContentPage.ToolbarItems>    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+
+        <!--<Image Style="{StaticResource bg_imageStyle}"></Image>-->
+
+
+        <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Padding="5,0">
+
+            <Label Text="{i18n:Translate text}" Margin="0,0,0,-5" TextColor="White"></Label>
+            <Frame Style="{StaticResource CellFrameStyle}" Margin="0">
+                <Editor x:Name="textarea" Text="{Binding customText.Text, Mode=TwoWay}" HeightRequest="100" FontSize="Large" Keyboard="Text"/>
+            </Frame>
+
+            <Grid>               
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition   Width="0.7*" />
+                    <ColumnDefinition   Width="0.3*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0" HorizontalOptions="FillAndExpand">
+                    <Label Text="{i18n:Translate color_text}" Margin="0,0,0,-5" TextColor="White"></Label>
+                    <Frame Style="{StaticResource CellFrameStyle}" Margin="0" HorizontalOptions="FillAndExpand">
+                        <Picker x:Name="fontcolor" SelectedIndex="{Binding customText.Color}" HorizontalOptions="FillAndExpand">
+                        </Picker>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand" >
+                    <Label Text="{i18n:Translate size_text}" Margin="0,0,0,-5" TextColor="White" ></Label>
+                    <Frame Style="{StaticResource CellFrameStyle}" Margin="0" >
+                        <Picker x:Name="fontsize" SelectedIndex="{Binding customText.FontSize}" HorizontalOptions="FillAndExpand" >
+                            <Picker.Items>
+                                <x:String>10</x:String>
+                                <x:String>12</x:String>
+                                <x:String>14</x:String>
+                                <x:String>16</x:String>
+                                <x:String>20</x:String>
+                                <x:String>24</x:String>
+                                <x:String>32</x:String>
+                                <x:String>40</x:String>
+                                <x:String>48</x:String>
+                                <x:String>60</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Frame>
+                </StackLayout>
+
+            </Grid>
+
+            <Label  Text="{i18n:Translate animation}" Margin="0,0,0,-5" TextColor="White"></Label>
+            <Frame Style="{StaticResource CellFrameStyle}" Margin="0">
+                <Picker x:Name="animation" SelectedIndex="{Binding customText.Animation}" HorizontalOptions="FillAndExpand">                     
+                </Picker>
+            </Frame>
+
+            <Label  Text="{i18n:Translate animation_velocity}" Margin="0,0,0,-15" TextColor="White"></Label>
+            <StackLayout Orientation="Horizontal" Margin="0">
+                <!--<Frame Style="{StaticResource CellFrameStyle}" Margin="0,0,0,0" Padding="20,0">-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label Margin="5,0,0,0" FontAttributes="Italic"  Text="{Binding customText.AnimationVelocity}" Style="{StaticResource LabelStepperStyle}" />
+                        <Label Margin="-5,0,0,-10" FontAttributes="Italic"  FontSize="Large" Text="x"  Style="{StaticResource LabelStepperStyle}" />
+                    </StackLayout>
+                <!--</Frame>-->
+                <Stepper Minimum="1" Maximum="5" Value="{Binding customText.AnimationVelocity}"  Style="{StaticResource StepperStyle}" VerticalOptions="End"></Stepper>
+             </StackLayout>
+           
+        </StackLayout>
+
+        <StackLayout Grid.Row="1"  HorizontalOptions="Start" BackgroundColor="Transparent" Orientation="Horizontal" Padding="5,0">
+
+            <Button Image="{Binding customText.PlayPauseIconButton}" Text="{Binding customText.PlayPauseTextButton}"  Command="{Binding PlayPauseCommand}"  HorizontalOptions="Start"   VerticalOptions="Center"
+                    Style="{StaticResource rounded_buttonStyle}"  Margin="0"  BackgroundColor="#F5A800"/>
+            <Button Image="ic_stop_white_24dp" Text="STOP"  Command="{Binding StopCommand}" IsVisible="{Binding customText.IsVisibleStop}"   HorizontalOptions="Start"  VerticalOptions="Center"
+                    Style="{StaticResource rounded_buttonStyle}"  Margin="0" BackgroundColor="#F5A800"  />
+            
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>

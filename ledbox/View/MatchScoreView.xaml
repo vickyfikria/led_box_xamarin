@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:ledbox;assembly=ledbox"
+             xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+             x:Class="ledbox.MatchScoreView"            
+             ControlTemplate="{StaticResource LedboxTemplate}"           
+             Title="{i18n:Translate match_score}"
+             BackgroundColor="#ACAD8F" >
+
+            <NavigationPage.TitleView>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{i18n:Translate  match_score}" Style="{StaticResource lbl_Title}"/>
+                    <!--<Label Text="Premi sull'icona per scaricare nuove interfacce" Style="{StaticResource lbl_SubTitle}"/>-->
+                </StackLayout>
+            </NavigationPage.TitleView>
+            <ContentPage.ToolbarItems>
+                <ToolbarItem  x:Name="bt_store" Text="Store" Icon="ic_cloud_download_white_24dp.png" Clicked="Bt_Store_Clicked" />
+            </ContentPage.ToolbarItems>
+   
+
+    <Grid BackgroundColor="#ACAD8F">        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+       
+        <Image  Style="{StaticResource bg_imageStyle}"></Image>
+
+        <ListView  x:Name="lstView" RowHeight="70"
+                   ItemTapped="lstView_ItemTapped"
+                   Style="{StaticResource ListViewStyle}" >
+                
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                         <ViewCell.ContextActions>
+                             <MenuItem Icon="ic_delete_white_24dp.png" Clicked="Disinstall_Clicked" Text="Disinstalla" IsDestructive="True" />
+                             </ViewCell.ContextActions>
+
+                        <Frame Style="{StaticResource CellFrameStyle}">
+                            <StackLayout Style="{StaticResource CellStackStyle}">
+                                <Frame Style="{StaticResource BarFrameStyle}"></Frame>
+                                
+                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="StartAndExpand">
+                                        <Label Text = "{Binding label_title}" Style="{StaticResource Title_CellStackStyle}" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="StartAndExpand">
+                                            <Label Text = "{Binding Version}" Style="{StaticResource SubTitle_CellStackStyle}" />
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </Frame>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Grid.Row="0" IsVisible="false" x:Name="lblEmpty" VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Style="{StaticResource lbl_listCenter}" Text="{i18n:Translate no_elements}"></Label>
+            <Label Style="{StaticResource lbl_listCenter}" Text="{i18n:Translate use_store_button}"></Label>
+        </StackLayout>
+    </Grid>
+</ContentPage>
+

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms" 
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+              xmlns:local="clr-namespace:ledbox"
+              xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+              xmlns:resources="clr-namespace:ledbox.Resources"
+              x:Class="ledbox.MainPage" 
+              Title="LEDbox"              
+              ControlTemplate="{StaticResource LedboxTemplate}"
+              BackgroundColor="#52534A" >
+
+
+            <NavigationPage.TitleView>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10">
+                    <Image Source="logo.png" HeightRequest="26" VerticalOptions="CenterAndExpand"/>
+                    <Button Text="{TemplateBinding Parent.BindingContext.sport.Title}" Clicked="Bt_changeAlias" FontSize="12" Padding="0" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+            </NavigationPage.TitleView> 
+
+    
+    <ContentPage.ToolbarItems>        
+        <ToolbarItem  Icon="ic_account_circle_white_24dp.png" Clicked="Bt_changeAlias" />        
+        <ToolbarItem Icon="ic_more_vert_white_24dp.png" Text="setting" Clicked="Bt_Setting_Clicked"></ToolbarItem>            
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="5">
+       
+        <RelativeLayout  HeightRequest="1">        
+            <Button               
+                Text=" {i18n:Translate playlist}"
+                Clicked="Bt_Playlist_Clicked"
+                Style="{StaticResource menu_buttonStyle}"
+                BackgroundColor="#008b8b"             />
+        </RelativeLayout>
+        
+        <RelativeLayout  HeightRequest="1">            
+            <Button                
+                Text="{i18n:Translate match_score}"
+                Clicked="Bt_MatchScore_Clicked"
+                Style="{StaticResource menu_buttonStyle}"
+                BackgroundColor="#acad8f"             />
+            
+        </RelativeLayout>
+
+        <RelativeLayout  HeightRequest="1">            
+            <Button                
+                Text="{i18n:Translate practice}"
+                Clicked="Bt_Practice_Clicked"
+                Style="{StaticResource menu_buttonStyle}"
+                BackgroundColor="DarkSeaGreen"             />
+        </RelativeLayout>
+                   
+        <RelativeLayout  HeightRequest="1">          
+            <Button                
+                Text="{i18n:Translate custom_text}"
+                Clicked="Bt_Text_Clicked"
+                Style="{StaticResource menu_buttonStyle}"
+                BackgroundColor="IndianRed"
+             />            
+        </RelativeLayout>
+       <StackLayout x:Name="listPlugins">
+        <!--IDEA PER PLUGINS-->
+        <!--<Button
+            Text="#SMASHFINDER | Plugins"
+            Clicked="Bt_Text_Clicked"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            HeightRequest="60"
+            BackgroundColor="#F5A800"
+            BorderRadius="10"
+            TextColor="White"
+            FontAttributes="Bold"
+            FontSize="Medium"           />-->
+        </StackLayout>
+
+    </StackLayout>
+    
+</ContentPage>

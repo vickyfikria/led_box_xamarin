@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_us" xml:space="preserve">
+    <value>O NAMA</value>
+  </data>
+  <data name="access_denied" xml:space="preserve">
+    <value>Ovo sučelje nije moguće koristiti jer LEDbox koristi drugi korisnik.</value>
+  </data>
+  <data name="action" xml:space="preserve">
+    <value>Odaberite naredbu</value>
+  </data>
+  <data name="activity" xml:space="preserve">
+    <value>AKTIVNOST</value>
+  </data>
+  <data name="activitydialog" xml:space="preserve">
+    <value>Postoje aktivnosti koje se izvode na LEDboxu. Želite li ih vidjeti?</value>
+  </data>
+  <data name="advanced_function_ledbox" xml:space="preserve">
+    <value>Napredne funkcije LEDbox-a</value>
+  </data>
+  <data name="animation" xml:space="preserve">
+    <value>Animacije</value>
+  </data>
+  <data name="animation_velocity" xml:space="preserve">
+    <value>Brzina</value>
+  </data>
+  <data name="another_diplay_process_execute" xml:space="preserve">
+    <value>Na LEDboxu je već pokrenut postupak.</value>
+  </data>
+  <data name="app_not_compatible" xml:space="preserve">
+    <value>Verzija aplikacije nije kompatibilna s ovim LEDboxom. Ažurirajte aplikaciju.</value>
+  </data>
+  <data name="are_you_sure" xml:space="preserve">
+    <value>Jeste li sigurni?</value>
+  </data>
+  <data name="audio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="blinking" xml:space="preserve">
+    <value>Trepteće</value>
+  </data>
+  <data name="blue" xml:space="preserve">
+    <value>Plavo</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Poništiti</value>
+  </data>
+  <data name="change_connection" xml:space="preserve">
+    <value>Promijenite vezu</value>
+  </data>
+  <data name="change_language" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="change_user" xml:space="preserve">
+    <value>Promijenite korisnika</value>
+  </data>
+  <data name="check_last_ledbox_version" xml:space="preserve">
+    <value>Skinite LEDbox ažuriranje</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>Odaberite </value>
+  </data>
+  <data name="choose_bluetooth" xml:space="preserve">
+    <value>Odaberite LEDbox za povezivanje</value>
+  </data>
+  <data name="color_text" xml:space="preserve">
+    <value>Boja</value>
+  </data>
+  <data name="configure_ledbox" xml:space="preserve">
+    <value>Konfigurirajte LEDbox</value>
+  </data>
+  <data name="config_saved" xml:space="preserve">
+    <value>Konfiguracija spremljena</value>
+  </data>
+  <data name="confirm_deletion" xml:space="preserve">
+    <value>Brisanje datoteka na LEDboxu</value>
+  </data>
+  <data name="confirm_disinstallation" xml:space="preserve">
+    <value>Želite li deinstalirati odabranu stavku?</value>
+  </data>
+  <data name="confirm_installation" xml:space="preserve">
+    <value>Preuzmi i instaliraj odabranu stavku?</value>
+  </data>
+  <data name="connect" xml:space="preserve">
+    <value>Poveži</value>
+  </data>
+  <data name="connecting_before_ledbox" xml:space="preserve">
+    <value>Prvo se spojite na LEDbox</value>
+  </data>
+  <data name="connecting_ledbox" xml:space="preserve">
+    <value>Povezivanje LEDboxa u tijeku...</value>
+  </data>
+  <data name="connect_last_ledbox" xml:space="preserve">
+    <value>Spojite se na posljednje povezani LEDbox?</value>
+  </data>
+  <data name="connect_to_wifi" xml:space="preserve">
+    <value>Spojite uređaj na Wi-Fi mrežu na koju je LEDbox spojen.</value>
+  </data>
+  <data name="create_playlist" xml:space="preserve">
+    <value>Stvoriti popis za reprodukciju</value>
+  </data>
+  <data name="creation_progress" xml:space="preserve">
+    <value>Izrada datoteke u tijeku...</value>
+  </data>
+  <data name="credits" xml:space="preserve">
+    <value>O nama</value>
+  </data>
+  <data name="current_setting" xml:space="preserve">
+    <value>Trenutna postavka</value>
+  </data>
+  <data name="custom_text" xml:space="preserve">
+    <value>PRILAGOĐENI TEKST</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Izbrisati</value>
+  </data>
+  <data name="delete_playlistaudio" xml:space="preserve">
+    <value>Izbrisati sve popise za reprodukciju na LEDboxu</value>
+  </data>
+  <data name="delete_playlistimage" xml:space="preserve">
+    <value>Izbrisati sve vježbe na LEDboxu</value>
+  </data>
+  <data name="dhcp_restarted" xml:space="preserve">
+    <value>LAN mreža ponovno pokrenuta</value>
+  </data>
+  <data name="disable_mobile_connection" xml:space="preserve">
+    <value>Onemogućite mobilne podatke za povezivanje na Wi-Fi vezu na LEDboxu.</value>
+  </data>
+  <data name="disconnect" xml:space="preserve">
+    <value>Odspojiti</value>
+  </data>
+  <data name="disconnect_for_change_language" xml:space="preserve">
+    <value>Odspojite LEDbox da biste promijenili jezik.</value>
+  </data>
+  <data name="disinstallation" xml:space="preserve">
+    <value>Deinstaliraj</value>
+  </data>
+  <data name="downloading" xml:space="preserve">
+    <value>Preuzimanje...</value>
+  </data>
+  <data name="downloading_preinstall" xml:space="preserve">
+    <value>Preuzimanje zadanih vrijednosti u tijeku...</value>
+  </data>
+  <data name="download_and_install" xml:space="preserve">
+    <value>Preuzmite i instalirajte</value>
+  </data>
+  <data name="download_last_upgrade_completed" xml:space="preserve">
+    <value>LEDbox ažuriranje uspješno preuzeto.</value>
+  </data>
+  <data name="download_list" xml:space="preserve">
+    <value>Popis preuzimanja...</value>
+  </data>
+  <data name="download_manual" xml:space="preserve">
+    <value>Preuzmite priručnik</value>
+  </data>
+  <data name="duplicate" xml:space="preserve">
+    <value>Dupliciraj</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Uredi</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>Elementi</value>
+  </data>
+  <data name="enter_ip_ledbox" xml:space="preserve">
+    <value>Unesite IP adresu LEDboxa (probajte 172.24.1.1) i ponovno se povežite</value>
+  </data>
+  <data name="error_communication" xml:space="preserve">
+    <value>Komunikacijska greška s LEDboxom.</value>
+  </data>
+  <data name="error_connection" xml:space="preserve">
+    <value>Greška u povezivanju</value>
+  </data>
+  <data name="error_connection_to_ledbox" xml:space="preserve">
+    <value>Greška u povezivanju s LEDboxom</value>
+  </data>
+  <data name="error_connection_to_ledbox_bluetooth" xml:space="preserve">
+    <value>Greška tijekom Bluetooth povezivanja. Provjerite da li je LEDbox uključen.</value>
+  </data>
+  <data name="error_download" xml:space="preserve">
+    <value>Greška u preuzimanju</value>
+  </data>
+  <data name="error_image" xml:space="preserve">
+    <value>Greška u stvaranju slike</value>
+  </data>
+  <data name="error_read" xml:space="preserve">
+    <value>Greška kod čitanja</value>
+  </data>
+  <data name="error_upload" xml:space="preserve">
+    <value>Greška tijekom prijenosa</value>
+  </data>
+  <data name="error_zip" xml:space="preserve">
+    <value>Greška u stvaranju paketa medijskih datoteka.</value>
+  </data>
+  <data name="from_local" xml:space="preserve">
+    <value>S Vašeg uređaja</value>
+  </data>
+  <data name="from_online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="gallery" xml:space="preserve">
+    <value>Galerija</value>
+  </data>
+  <data name="green" xml:space="preserve">
+    <value>Zeleno</value>
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>Slika</value>
+  </data>
+  <data name="image_cover" xml:space="preserve">
+    <value>Naslovnica na LEDboxu</value>
+  </data>
+  <data name="image_video" xml:space="preserve">
+    <value>Slika</value>
+  </data>
+  <data name="image_wait" xml:space="preserve">
+    <value>Naslovnica </value>
+  </data>
+  <data name="insert_name_playlist" xml:space="preserve">
+    <value>Unesite ime popisa za reprodukciju</value>
+  </data>
+  <data name="insert_name_practice" xml:space="preserve">
+    <value>Unesite ime za vježbu</value>
+  </data>
+  <data name="insert_title" xml:space="preserve">
+    <value>Unesite naslov</value>
+  </data>
+  <data name="installation" xml:space="preserve">
+    <value>Instalacija</value>
+  </data>
+  <data name="installation_complete" xml:space="preserve">
+    <value>Instalacija dovršena</value>
+  </data>
+  <data name="interface_for_only_admin" xml:space="preserve">
+    <value>Ovo sučelje može koristiti samo korisnik koji se prvi povezao s LEDboxom.</value>
+  </data>
+  <data name="interface_for_only_bluetooth_connection" xml:space="preserve">
+    <value>Ovo sučelje može biti korišteno samo preko Bluetooth veze.</value>
+  </data>
+  <data name="interface_for_only_wifi_connection" xml:space="preserve">
+    <value>Ovo sučelje može biti korišteno samo preko Wi-Fi veze.</value>
+  </data>
+  <data name="interface_yet_present" xml:space="preserve">
+    <value>Postoji starije sučelje od onog kojeg instalirate. Želite li deinstalirati staro sučelje?</value>
+  </data>
+  <data name="ip_lan" xml:space="preserve">
+    <value>IP adresa (LAN)</value>
+  </data>
+  <data name="ip_wifi" xml:space="preserve">
+    <value>IP adresa (Wifi)</value>
+  </data>
+  <data name="item_only_on_ledbox" xml:space="preserve">
+    <value>Ova je stavka prisutna samo na LEDboxu. Možete samo reproducirati / pauzirati / zaustaviti.</value>
+  </data>
+  <data name="ledbox_connected" xml:space="preserve">
+    <value>LEDbox pravilno spojen</value>
+  </data>
+  <data name="ledbox_functions" xml:space="preserve">
+    <value>LEDbox funkcije</value>
+  </data>
+  <data name="ledbox_not_found" xml:space="preserve">
+    <value>LEDbox nije pronađen.</value>
+  </data>
+  <data name="ledbox_search" xml:space="preserve">
+    <value>Traženje LEDboxa...</value>
+  </data>
+  <data name="ledbox_updated" xml:space="preserve">
+    <value>Ponovno pokretanje LEDboxa radi dovršetka ažuriranja.</value>
+  </data>
+  <data name="list_empty_practice_remote" xml:space="preserve">
+    <value>Nema prisutnih vježbi na LEDboxu.</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Učitavanje...</value>
+  </data>
+  <data name="login_intro" xml:space="preserve">
+    <value>Bok, unesite Vaše detalje i onda pritisnite OK.</value>
+  </data>
+  <data name="long_beep" xml:space="preserve">
+    <value>Dugačak zvučni signal</value>
+  </data>
+  <data name="long_beeps" xml:space="preserve">
+    <value>Dugački zvučni signali</value>
+  </data>
+  <data name="master_ip_not_valid" xml:space="preserve">
+    <value>IP adresa (glavna) nije valjana</value>
+  </data>
+  <data name="match_score" xml:space="preserve">
+    <value>REZULTAT UTAKMICE</value>
+  </data>
+  <data name="memory_ledbox" xml:space="preserve">
+    <value>LEDbox memorija</value>
+  </data>
+  <data name="message_sended" xml:space="preserve">
+    <value>Naredba poslana LEDboxu</value>
+  </data>
+  <data name="mode_execute" xml:space="preserve">
+    <value>Komunikacijska uloga</value>
+  </data>
+  <data name="modifier_layout" xml:space="preserve">
+    <value>Način Prikaza</value>
+  </data>
+  <data name="move_down" xml:space="preserve">
+    <value>Pomicanje prema dolje</value>
+  </data>
+  <data name="move_up" xml:space="preserve">
+    <value>Pomicanje prema gore</value>
+  </data>
+  <data name="must_enabled_location" xml:space="preserve">
+    <value>Omogućite uporabu lokacijskih usluga kako bi koristili Wifi mrežu</value>
+  </data>
+  <data name="network_gateway_not_valid" xml:space="preserve">
+    <value>IP adresa pristupnika (mrežni odjeljak) nije važeća.</value>
+  </data>
+  <data name="network_ip_not_valid" xml:space="preserve">
+    <value>Nevažeća IP adresa (mrežni odjeljak).</value>
+  </data>
+  <data name="network_modality" xml:space="preserve">
+    <value>LAN mod</value>
+  </data>
+  <data name="network_subnet_not_valid" xml:space="preserve">
+    <value>Mrežna maska nije važeća</value>
+  </data>
+  <data name="new_firmware_ledbox_downloaded" xml:space="preserve">
+    <value>Novi LEDbox firmware je prezet</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>Ne</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>ništa</value>
+  </data>
+  <data name="none_playlist_item" xml:space="preserve">
+    <value>Nijedna datoteka nije umetnuta na popis za reprodukciju</value>
+  </data>
+  <data name="none_practice_item" xml:space="preserve">
+    <value>Nijedna datoteka nije umetnuta u vježbe</value>
+  </data>
+  <data name="no_device_bluetooth" xml:space="preserve">
+    <value>Nije pronađen niti jedan LEDbox</value>
+  </data>
+  <data name="no_elements" xml:space="preserve">
+    <value>Nema stavki na popisu.</value>
+  </data>
+  <data name="no_internet" xml:space="preserve">
+    <value>Niste spojeni na internet.</value>
+  </data>
+  <data name="no_internet_wifi_direct" xml:space="preserve">
+    <value>Morate onemogućiti Wifi vezu sa LEDboxa i morate se povezati s internetskom mrežom (Wifi ili mobilna mreža) da biste pristupili internet trgovini.</value>
+  </data>
+  <data name="no_ledbox_compatible" xml:space="preserve">
+    <value>Verzija LEDboxa nije kompatibilna s ovom aplikacijom.</value>
+  </data>
+  <data name="no_ledbox_connect_to_practice_remote" xml:space="preserve">
+    <value>Spojite se s LEDboxom kako biste dobili pristup vježbama.</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="online_new_upgrade_ledbox" xml:space="preserve">
+    <value>Dostupno je novo LEDbox ažuriranje. Preuzeti odmah?</value>
+  </data>
+  <data name="on_ledbox" xml:space="preserve">
+    <value>Samo na LEDboxu</value>
+  </data>
+  <data name="open_layout_parameters" xml:space="preserve">
+    <value>Prikazati parametre</value>
+  </data>
+  <data name="open_layout_waiting" xml:space="preserve">
+    <value>Prikazati naslovnicu</value>
+  </data>
+  <data name="open_store" xml:space="preserve">
+    <value>LEDbox Trgovina</value>
+  </data>
+  <data name="orange" xml:space="preserve">
+    <value>Narančasto</value>
+  </data>
+  <data name="pause" xml:space="preserve">
+    <value>pauza</value>
+  </data>
+  <data name="play" xml:space="preserve">
+    <value>play</value>
+  </data>
+  <data name="playlist" xml:space="preserve">
+    <value>POPIS ZA REPRODUKCIJU</value>
+  </data>
+  <data name="playlist_audio" xml:space="preserve">
+    <value>POPIS ZA REPRODUKCIJU (audio)</value>
+  </data>
+  <data name="playlist_imagevideo" xml:space="preserve">
+    <value>POPIS ZA REPRODUKCIJU (slika)</value>
+  </data>
+  <data name="practice" xml:space="preserve">
+    <value>VJEŽBA</value>
+  </data>
+  <data name="preferences" xml:space="preserve">
+    <value>Postavke</value>
+  </data>
+  <data name="preset" xml:space="preserve">
+    <value>Besplatne Vježbe</value>
+  </data>
+  <data name="preview" xml:space="preserve">
+    <value>Pregled</value>
+  </data>
+  <data name="purple" xml:space="preserve">
+    <value>Ljubičasta</value>
+  </data>
+  <data name="reboot" xml:space="preserve">
+    <value>Ponovno pokretanje LEDboxa</value>
+  </data>
+  <data name="rebooting" xml:space="preserve">
+    <value>Ponovno podizanje sustava</value>
+  </data>
+  <data name="reboot_app" xml:space="preserve">
+    <value>Ponovo pokrenite da bi promjene stupile na snagu. Resetiraj sad?</value>
+  </data>
+  <data name="red" xml:space="preserve">
+    <value>Crvena</value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>Resetiraj</value>
+  </data>
+  <data name="restart_dhcp" xml:space="preserve">
+    <value>Resetiranje LAN mreže</value>
+  </data>
+  <data name="run_update" xml:space="preserve">
+    <value>Pokrenuti ažuriranje LEDboxa sada?</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Spremi</value>
+  </data>
+  <data name="scroller_bottom_top" xml:space="preserve">
+    <value>Klizač (od dna do vrha)</value>
+  </data>
+  <data name="scroller_left_right" xml:space="preserve">
+    <value>Klizač (s lijeva na desno)</value>
+  </data>
+  <data name="scroller_right_left" xml:space="preserve">
+    <value>Klizač (s desna na lijevo)</value>
+  </data>
+  <data name="scroller_top_bottom" xml:space="preserve">
+    <value>Klizač (od vrha do dna)</value>
+  </data>
+  <data name="searching" xml:space="preserve">
+    <value>Traži...</value>
+  </data>
+  <data name="searching_bluetooth" xml:space="preserve">
+    <value>Traženje LEDboxa...</value>
+  </data>
+  <data name="search_other_ledbox" xml:space="preserve">
+    <value>Tražite li druge LEDbox u mreži?</value>
+  </data>
+  <data name="select_connection" xml:space="preserve">
+    <value>Odaberite vezu za LEDbox</value>
+  </data>
+  <data name="select_language" xml:space="preserve">
+    <value>Odaberite jezik</value>
+  </data>
+  <data name="setting" xml:space="preserve">
+    <value>POSTAVKA</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Postavke</value>
+  </data>
+  <data name="settings_ledbox" xml:space="preserve">
+    <value>Konfiguriraj LEDbox</value>
+  </data>
+  <data name="short_beep" xml:space="preserve">
+    <value>Kratki zvučni signal</value>
+  </data>
+  <data name="short_beeps" xml:space="preserve">
+    <value>Kratki zvučni signali</value>
+  </data>
+  <data name="size_text" xml:space="preserve">
+    <value>Veličina teksta</value>
+  </data>
+  <data name="sport_required" xml:space="preserve">
+    <value>Morate odabrati sport</value>
+  </data>
+  <data name="start_dhcp_restart" xml:space="preserve">
+    <value>Ponovno pokreni LAN mrežu ...</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>stop</value>
+  </data>
+  <data name="store" xml:space="preserve">
+    <value>POHRANITI</value>
+  </data>
+  <data name="success_connection" xml:space="preserve">
+    <value>Spajanje uspješno</value>
+  </data>
+  <data name="sure_disconnect" xml:space="preserve">
+    <value>Jeste li sigurni da se želite odjaviti s LEDboxa?</value>
+  </data>
+  <data name="text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="time_visibility" xml:space="preserve">
+    <value>Vidljivost</value>
+  </data>
+  <data name="trash" xml:space="preserve">
+    <value>Smeće</value>
+  </data>
+  <data name="trash_all_media" xml:space="preserve">
+    <value>SVE MEDIJSKE DATOTEKE</value>
+  </data>
+  <data name="update_ledbox" xml:space="preserve">
+    <value>Ažurirajte LEDbox</value>
+  </data>
+  <data name="update_to" xml:space="preserve">
+    <value>Reinstaliranje ažuriranja</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Korisničko ime</value>
+  </data>
+  <data name="username_required" xml:space="preserve">
+    <value>Potrebno je korisničko ime</value>
+  </data>
+  <data name="use_plus_button" xml:space="preserve">
+    <value>Kliknite gumb + na zaglavlju kako biste dodali novu stavku.</value>
+  </data>
+  <data name="use_store_button" xml:space="preserve">
+    <value>Kliknite gumb pohraniti kako biste preuzeli novi rezultat utakmice</value>
+  </data>
+  <data name="version" xml:space="preserve">
+    <value>Verzija</value>
+  </data>
+  <data name="video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>Upozorenje</value>
+  </data>
+  <data name="warning_scan_bluetooth" xml:space="preserve">
+    <value>UPOZORENJE: LEDbox ne smije biti uključen više od jedne minute.</value>
+  </data>
+  <data name="weight_gym" xml:space="preserve">
+    <value>Zagrijavanje</value>
+  </data>
+  <data name="white" xml:space="preserve">
+    <value>Bijelo</value>
+  </data>
+  <data name="wifi_modality" xml:space="preserve">
+    <value>Wi-Fi mod</value>
+  </data>
+  <data name="will_be_downloaded" xml:space="preserve">
+    <value>biti će preuzeto</value>
+  </data>
+  <data name="yellow" xml:space="preserve">
+    <value>Žuta</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="you_download_last_ledbox_upgrade" xml:space="preserve">
+    <value>Preuzeli ste najnovije LEDbox ažuriranje.</value>
+  </data>
+  <data name="you_have_last_ledbox_upgrade" xml:space="preserve">
+    <value>Najnovije LEDbox ažuriranje već instalirano</value>
+  </data>
+</root>

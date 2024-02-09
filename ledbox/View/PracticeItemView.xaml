@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:ledbox;assembly=ledbox"
+             x:Class="ledbox.PracticeItemView"
+             xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+             ControlTemplate="{StaticResource LedboxTemplate}"
+             BackgroundColor="DarkSeaGreen"   
+             Title="{Binding Practice.Title}" >
+
+            <NavigationPage.TitleView>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{Binding Practice.Title}" Style="{StaticResource lbl_Title}"/>
+                    <!--<Label Text="Premi sull'elemento per altri comandi" Style="{StaticResource lbl_SubTitle}"/>-->
+                </StackLayout>
+            </NavigationPage.TitleView>
+            <ContentPage.ToolbarItems>
+                <ToolbarItem Clicked="ChangeTitle_Clicked" Icon="ic_edit_white_24dp.png"  />
+                <ToolbarItem Clicked="AddItem" Icon="ic_add_white_24dp.png"  />
+            </ContentPage.ToolbarItems>
+    
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.92*" />
+            <RowDefinition Height="0.08*" />
+        </Grid.RowDefinitions>
+        <Image Style="{StaticResource bg_imageStyle}"></Image>
+        <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand" Margin="0">
+            
+        
+            <ListView  x:Name="lstItems"  RowHeight="80"
+                       Style="{StaticResource ListViewStyle}"
+                       ItemTapped="lstItems_ItemTapped"
+                       ItemsSource="{Binding OItemPractice}" 
+                       >
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                           <StackLayout Orientation="Horizontal"  >
+                             
+
+                                <Frame Style="{StaticResource CellFrameStyle}" HorizontalOptions="FillAndExpand">
+                                <!--<Frame Style="{StaticResource CellFrameStyle2}" HorizontalOptions="FillAndExpand">-->
+                                <Grid>
+
+                                    <!-- TODO disattivato l'intera immagine di anteprima 14/12/2019-->
+                                    <!-- <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.05*" />
+                                        <ColumnDefinition Width="0.35*" />
+                                        <ColumnDefinition Width="0.6*" />
+                                    </Grid.ColumnDefinitions>-->
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.04*" />
+                                        <ColumnDefinition Width="0.55*" />
+                                        <ColumnDefinition Width="0.41*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame Grid.Column="0" Style="{StaticResource BarFrameStyle}" Padding="1" Margin="0,1">
+                                        <Label Text="{Binding ordering}" VerticalOptions="Center" HorizontalOptions="Center" Margin="0" FontSize="Micro" />
+                                    </Frame>
+
+                                    <StackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                        <!--<Label Text = "{Binding Title}}"  FontAttributes="Bold" Margin="0,0,0,-5" VerticalTextAlignment="Start"  HorizontalOptions="StartAndExpand" MaxLines="1"/>-->
+                                        <StackLayout Margin="0,-5,0,-10" Orientation="Horizontal">
+                                                <Label Text = "Round:" VerticalOptions="End" HorizontalOptions="Start" FontSize="Small"/>
+                                                <Label Text = "{Binding Round}" VerticalOptions="End" FontAttributes="Bold" TextColor="Black" HorizontalOptions="EndAndExpand" FontSize="Small"/> 
+                                        </StackLayout>
+                                        <StackLayout Margin="0,0,0,-10" Orientation="Horizontal">
+                                                <Label Text = "Setup:" VerticalOptions="End" HorizontalOptions="Start" FontSize="Small"/>
+                                                <Label Text = "{Binding RestMM}" VerticalOptions="End" FontAttributes="Bold" TextColor="DarkRed" HorizontalOptions="EndAndExpand" FontSize="Small"/>
+                                            </StackLayout>
+                                        <StackLayout Margin="0,0,0,0" Orientation="Horizontal">
+                                                <Label Text = "Work Time:" VerticalOptions="End" HorizontalOptions="Start" FontSize="Small"/>
+                                                <Label Text = "{Binding WorkMM}" VerticalOptions="End" FontAttributes="Bold" TextColor="DarkGreen" HorizontalOptions="EndAndExpand" FontSize="Small"/>
+                                        </StackLayout>                                
+
+                                    </StackLayout>
+
+                                    <Frame Grid.Column="2" Style="{StaticResource DeviceFrameStyle}" WidthRequest="124" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="0,0,5,0">
+                                        <!-- TODO disattivato l'intera immagine di anteprima 14/12/2019-->
+                                        <!--<StackLayout  Orientation="Horizontal" Padding="0" Margin="0" WidthRequest="180" HeightRequest="60">-->
+                                        
+                                        <StackLayout  Orientation="Horizontal" Padding="0" Margin="0" WidthRequest="120" HeightRequest="60">
+                                            
+                                            <Image Source="{Binding Filepath}" Aspect="AspectFit" WidthRequest="120" HeightRequest="60" Margin="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <!-- TODO disattivato l'intera immagine di anteprima 14/12/2019-->
+                                            <!--<Image Source="practice.png" HeightRequest="60" WidthRequest="60" HorizontalOptions="Start" Margin="-5,0,0,0"/>-->
+                                                              
+                                        </StackLayout>
+                                        
+                                    </Frame>
+                                    <!-- TODO disattivato l'intera immagine di anteprima 14/12/2019-->
+                                    <!--<Label Grid.Column="2" Text="{Binding Round}" FontSize="10" TextColor="LightGray" HorizontalTextAlignment="Start" VerticalOptions="Start" HorizontalOptions="EndAndExpand" Margin="0,6,6,0"/>-->
+
+                                </Grid>
+                               
+                              </Frame>
+
+                                            <!--TODO Pulsante ELIMINA, DUPLICA, SPOSTA SU e GIU-->
+                                            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="Transparent" Margin="0" Padding="0">
+                                                <Button  WidthRequest="30" HeightRequest="30" Image="ic_duplicate_white_24dp.png"    BackgroundColor="Transparent" Clicked="AddItem"   VerticalOptions="Center"  Margin="0" />
+                                                <Button  WidthRequest="30" HeightRequest="30" Image="ic_delete_white_24dp.png"    BackgroundColor="Transparent" Clicked="AddItem"   VerticalOptions="Center"  Margin="0" />
+                                            </StackLayout>   
+                                            <StackLayout HorizontalOptions="End" BackgroundColor="Transparent" Margin="0" Padding="0">
+                                                <Button  WidthRequest="30" HeightRequest="30" Image="ic_keyboard_arrow_up_white_24dp"    BackgroundColor="Transparent" Clicked="AddItem"   VerticalOptions="StartAndExpand"  Margin="0" />
+                                                <Button  WidthRequest="30" HeightRequest="30" Image="ic_keyboard_arrow_down_white_24dp"  BackgroundColor="Transparent" Clicked="AddItem"   VerticalOptions="EndAndExpand"   Margin="0" />
+                                            </StackLayout>-->
+
+
+                            </StackLayout>
+
+
+        </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    
+                </ListView>
+            
+            </StackLayout>
+
+            <StackLayout Grid.Row="0"  IsVisible="{Binding isEmpty}" VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Style="{StaticResource lbl_listCenter}" Text="{i18n:Translate no_elements}"></Label>
+                <Label Style="{StaticResource lbl_listCenter}" Text="{i18n:Translate use_plus_button}"></Label>
+            </StackLayout>
+
+         <Label Style="{StaticResource lbl_listCenter}" IsVisible="{Binding isRemote}" Text="{Binding lblStatus}"></Label>      
+  
+        <StackLayout Grid.Row="1" HorizontalOptions="Start" BackgroundColor="Transparent" Orientation="Horizontal" Padding="5">
+            <Button x:Name="PracticePlayButton" Image="{Binding Practice.PlayPauseIconButton}" Text="{Binding Practice.PlayPauseTextButton}"  Command="{Binding PlayPauseCommand}"  
+                    Style="{StaticResource rounded_buttonStyle}"   Margin="0" BackgroundColor="#F5A800"/>
+            <Button Image="ic_stop_white_24dp" Text="{i18n:Translate stop}"  Command="{Binding StopCommand}"  
+                    IsVisible="{Binding Practice.IsVisibleStop}" Style="{StaticResource rounded_buttonStyle}" BackgroundColor="#F5A800"  Margin="0" />
+        </StackLayout>
+
+    </Grid>      
+ 
+</ContentPage>

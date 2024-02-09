@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:ledbox;assembly=ledbox"
+             x:Class="ledbox.StoreItemView"
+             xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+             ControlTemplate="{StaticResource LedboxTemplateNoStatusBar}"
+             BackgroundColor="#72736d"
+             Title="{i18n:Translate store}"  >
+
+            <NavigationPage.TitleView>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{i18n:Translate store}" Style="{StaticResource lbl_Title}"/>
+                    <!--<Label Text="{Binding storeItem.name}" Style="{StaticResource lbl_SubTitle}"/>-->
+                </StackLayout>
+            </NavigationPage.TitleView>
+
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>          
+
+            <Image Grid.Row="0" Style="{StaticResource bg_Style}"></Image>
+
+            <StackLayout Orientation="Vertical" Margin="0">
+
+                <Label Text="{Binding storeItem.label_title}" TextColor="#F5A800" FontSize="20" FontAttributes="Bold" HorizontalOptions="Start" Margin="20,5,20,-5"/>
+            <Label Text="{Binding storeItem.Version}" TextColor="#CCCCCC" HorizontalOptions="Start" FontSize="12" Margin="20,0"/>
+            <Frame BorderColor="Black"  Margin="20,0" HorizontalOptions="StartAndExpand" Padding="2" BackgroundColor="Black">
+                <Image Source="{Binding storeItem.image}" Aspect="AspectFit" HeightRequest="96" WidthRequest="288" />
+            </Frame>
+            
+            <ScrollView HorizontalScrollBarVisibility="Always" Margin="20,10" Padding="0,0,5,0" >
+                    <Label Text="{Binding storeItem.label_description}" FontSize="12" FontAttributes="Italic" HorizontalOptions="Start" HorizontalTextAlignment="Start" TextColor="#CCCCCC"/>
+            </ScrollView>
+
+            <Button Text="{i18n:Translate download_and_install}" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Clicked="Handle_Clicked" Style="{StaticResource  rounded_buttonStyle}"  BackgroundColor="#F5A800" Margin="20,10,20,20"/>
+
+        </StackLayout>
+
+        </Grid>
+
+    </ContentPage.Content>
+
+   
+    
+</ContentPage>

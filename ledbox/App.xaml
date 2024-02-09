@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+    x:Class="ledbox.App" >
+    
+    
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!--TEMPLATES-->
+            <ControlTemplate   x:Key="LedboxTemplate">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition   Height="0.015*" />
+                        <RowDefinition   Height="0.91*" />
+                        <RowDefinition   Height="0.075*" />
+                    </Grid.RowDefinitions>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition   Width="0.35*" />
+                        <ColumnDefinition   Width="0.3*" />
+                        <ColumnDefinition   Width="0.35*" />             
+                    </Grid.ColumnDefinitions>                              
+
+                   
+                    <Image Grid.Row="0" Grid.Column="0" Source="rounded_top_left" HeightRequest="15" HorizontalOptions="Start" VerticalOptions="Start"></Image>
+                    <Image Grid.Row="0" Grid.Column="2" Source="rounded_top_right" HeightRequest="15" HorizontalOptions="End" VerticalOptions="Start"></Image>
+
+                    <ContentPresenter   Grid.Row="1" Grid.ColumnSpan="3" />
+
+                    <Image Grid.Row="2" Grid.Column="0" Source="rounded_bottom_left" HeightRequest="15" HorizontalOptions="Start" VerticalOptions="Start" Margin="-1,-15,0,0"></Image>
+                    <Image Grid.Row="2" Grid.Column="2" Source="rounded_bottom_right" HeightRequest="15" HorizontalOptions="End" VerticalOptions="Start" Margin="0,-15,-1,0"></Image>
+                    <BoxView   Grid.Row="2" Grid.ColumnSpan="3"   Color="#52534A" HeightRequest="155" VerticalOptions="EndAndExpand"/>
+                   
+
+                    <!--ACTIVITY-->
+                    <Button x:Name="bt_stop" Grid.Row="2" Grid.Column="0" Margin="5,0,0,0"
+                               Image="ic_playlist_play_white_24dp" IsVisible="{TemplateBinding Parent.BindingContext.show_message}" TextColor="White" BackgroundColor="#9953534A" WidthRequest="40" HeightRequest="40" CornerRadius="40"
+                               Command="{TemplateBinding Parent.BindingContext.OpenActivitiesCommand}" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand"/>
+                    
+                    <!--TESTING MODE-->
+                    <Label Grid.Row="2" Grid.Column="0" Text="(Test Mode)" FontAttributes="Italic" IsVisible="{TemplateBinding Parent.BindingContext.isTestingMode}"
+                           FontSize="9" TextColor="#99FFFFFF" HorizontalOptions="End" VerticalOptions="Start"/>
+
+                    <!--CONNECT-->
+                    <StackLayout Grid.Row="2"  Grid.Column="1" Orientation="Vertical" VerticalOptions="EndAndExpand" HorizontalOptions="Center" Padding="0,0,0,5" BackgroundColor="Transparent">
+                        
+                        <Button x:Name="bt_connect"  Image="{TemplateBinding Parent.BindingContext.iconConnection}" Command="{TemplateBinding Parent.BindingContext.ConnectCommand}"
+                                IsVisible="True"  TextColor="White" HorizontalOptions="CenterAndExpand" BackgroundColor="#9952534A" Margin="0,0,0,0" CornerRadius="50" WidthRequest="50" HeightRequest="35"/>
+                        <Label  Text="{TemplateBinding Parent.BindingContext.labelBtConnection}" TextColor="White" FontSize="9" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" Margin="0,-10,0,0" FontAttributes="Italic"/>
+                    </StackLayout>
+
+                    <!--STATUS-->
+                    <StackLayout Grid.Row="2"  Grid.Column="2" Orientation="Horizontal" VerticalOptions="End" Margin="0,0,5,0" HorizontalOptions="End" IsVisible="{TemplateBinding Parent.BindingContext.ledboxPanelVisible}">
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" WidthRequest="20" >
+                            <Image x:Name="status_received" IsVisible="{TemplateBinding Parent.BindingContext.status_received}" Source="received.png" />
+                            <Image x:Name="status_send" IsVisible="{TemplateBinding Parent.BindingContext.status_send}" Source="send.png" />
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical"  VerticalOptions="Center" >
+                            <Label  Text="{TemplateBinding Parent.BindingContext.labelDeviceName}" FontAttributes="Bold" FontSize="12" TextColor="#F5A800" BackgroundColor="Transparent"  HorizontalTextAlignment="Center"/>
+                            <Label  Text="{TemplateBinding Parent.BindingContext.labelRole}" FontAttributes="Italic" FontSize="9" TextColor="White" BackgroundColor="Transparent" HorizontalTextAlignment="Center" Margin="0,-10,0,0"/>
+                        </StackLayout>
+                        <Button Image="ic_settings_white_24dp" Command="{TemplateBinding Parent.BindingContext.FunctionLedboxCommand}" WidthRequest="40" HeightRequest="40" VerticalOptions="Center" BackgroundColor="#9952534A" CornerRadius="40"/>
+                    </StackLayout>
+                    
+                </Grid>                
+            </ControlTemplate>
+
+
+            <!--TEMPLATES-->
+            <ControlTemplate   x:Key="LedboxTemplateNoStatusBar">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition   Height="0.015*" />
+                        <RowDefinition   Height="0.985*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition   Width="0.35*" />
+                        <ColumnDefinition   Width="0.30*" />
+                        <ColumnDefinition   Width="0.35*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <Image Grid.Row="0" Grid.Column="0" Source="rounded_top_left" HeightRequest="15" HorizontalOptions="Start" VerticalOptions="Start"></Image>
+                    <Image Grid.Row="0" Grid.Column="2" Source="rounded_top_right" HeightRequest="15" HorizontalOptions="End" VerticalOptions="Start"></Image>
+
+                    <ContentPresenter   Grid.Row="1" Grid.ColumnSpan="3" />
+                   
+                </Grid>
+            </ControlTemplate>
+
+            
+                
+           <!--STYLES-->
+
+           
+            
+            <Style x:Key="bg_imageStyle" TargetType="Image">          
+                <Setter Property="Source" Value="logo_white.png" />
+                <Setter Property="Opacity" Value="0.1" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="100" />
+                <Setter Property="WidthRequest" Value="200" />
+            </Style>
+
+            <Style x:Key="bg_Style" TargetType="Image">
+                <Setter Property="Source" Value="bgsplash.jpg" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <!--<Setter Property="HorizontalOptions" Value="FillAndExpand" />-->
+                <Setter Property="Aspect" Value="AspectFill" />
+            </Style>
+
+            <Style x:Key="lbl_Title" TargetType="Label">               
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="#E5E5E5" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="lbl_SubTitle" TargetType="Label">
+                <Setter Property="FontSize" Value="8" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Italic" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="Margin" Value="0,-8,0,0" />
+            </Style>
+            <Style x:Key="btn_Back" TargetType="Button">                
+                <Setter Property="BackgroundColor" Value="#9952534A" />                
+                <Setter Property="BorderRadius" Value="40" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="-9,0,21,0" />
+                <Setter Property="WidthRequest" Value="40" />
+            </Style>
+
+            <Style x:Key="lbl_listCenter" TargetType="Label">          
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontAttributes" Value="Italic" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="WidthRequest" Value="300" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="menu_buttonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Visual" Value="Material" />
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="RelativeLayout.WidthConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Width}" />
+                <Setter Property="RelativeLayout.HeightConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Height}" />
+            </Style>
+
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="Opacity" Value="0.7" />              
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />              
+                <Setter Property="Padding" Value="35,0" />
+                <Setter Property="Visual" Value="Material" />
+            </Style>
+            
+            <Style x:Key="StepperStyle" TargetType="Stepper">
+                <Setter Property="Opacity" Value="0.6" />
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="Visual" Value="Material" />
+            </Style>
+            
+            <Style x:Key="LabelStepperStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />                
+                <Setter Property="Visual" Value="Material" />
+            </Style>
+
+            <Style x:Key="rounded_buttonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#52534A" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="BorderRadius">
+                    <Setter.Value>
+                        <OnPlatform>
+                            
+                                <On Platform="iOS" Value="10"/>
+                                <On Platform="Android" Value="100"/>
+                        </OnPlatform>
+                    </Setter.Value>
+
+                   
+                </Setter>
+                    
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="Padding" Value="15,0" />                
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Visual" Value="Material" />
+                <Setter Property="Margin" Value="20,15" />
+            </Style>
+
+            <Style x:Key="rounded_smallbuttonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#52534A" />
+                <Setter Property="BorderRadius" Value="100" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="Padding" Value="0,0" />                
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Visual" Value="Material" />
+                
+            </Style>
+            
+            <Style x:Key="ListViewStyle" TargetType="ListView">
+                <Setter Property="SeparatorVisibility" Value="None" />
+                <Setter Property="SeparatorColor" Value="White" />
+                <Setter Property="Margin" Value="5,0" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="SelectionMode" Value="None" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="Visual" Value="Material" />
+            </Style>
+
+            <Style x:Key="CellStackStyle"  TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="BackgroundColor" Value="Transparent" />                
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Visual" Value="Material" />
+            </Style>
+
+            <Style x:Key="CellFrameStyle"  TargetType="Frame">
+                <!--<Setter Property="CornerRadius" Value="5" />-->
+                <!--<Setter Property="BorderColor" Value="#99FFFFFF" />-->
+                <Setter Property="BackgroundColor" Value="#99E5E5E5" />
+                <Setter Property="Margin" Value="4,2,4,2" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Visual" Value="Material" />
+            </Style>
+
+            <Style x:Key="CellFrameStyle2"  TargetType="Frame">                
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <!--<Setter Property="Margin" Value="4,2,4,2" />-->
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Visual" Value="Material" />
+            </Style>
+
+            <Style x:Key="BarFrameStyle"  TargetType="Frame">
+                <!--<Setter Property="CornerRadius" Value="5" />-->
+                <Setter Property="BackgroundColor" Value="#99FFFFFF" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="3" />
+            </Style>
+
+            <Style x:Key="DeviceFrameStyle"  TargetType="Frame">
+                <Setter Property="BorderColor" Value="#99FFFFFF" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HeightRequest" Value="62" />
+                <Setter Property="WidthRequest" Value="182" />
+            </Style>
+
+            <Style x:Key="Title_CellStackStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="5,0,0,-5" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                 <Setter Property="Visual" Value="Material" />
+            </Style>            
+             <Style x:Key="SubTitle_CellStackStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Micro" />
+                <!--<Setter Property="TextColor" Value="#52534A" />-->
+                <Setter Property="Margin" Value="5,2,0,5" />
+                <Setter Property="VerticalTextAlignment" Value="End" />
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+               
+            </Style>
+
+            <Style x:Key="btnLargeWithoutBg" TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="50" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="Transparent" />                
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="10" />
+            </Style>
+
+
+            <Style x:Key="btnPluginDashboard" TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="BackgroundColor" Value="#99F5A800" />
+                <Setter Property="RelativeLayout.WidthConstraint" Value="{ConstraintExpression Type=RelativeToParent, Property=Width}" />
+            </Style>
+
+
+        </ResourceDictionary>       
+    </Application.Resources>
+</Application>

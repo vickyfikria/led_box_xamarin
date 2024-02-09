@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about_us" xml:space="preserve">
+    <value>RÓLUNK</value>
+  </data>
+  <data name="access_denied" xml:space="preserve">
+    <value>Ezzel a hozzáféréssel a LEDbox nem irányítható, mivel egy másik felhasználó már bejelentkezett.</value>
+  </data>
+  <data name="action" xml:space="preserve">
+    <value>Válassz utasítást:</value>
+  </data>
+  <data name="activity" xml:space="preserve">
+    <value>TEVÉKENYSÉG</value>
+  </data>
+  <data name="activitydialog" xml:space="preserve">
+    <value>A LEDboxon kivetíndő anyagok készen állnak. Megjeleníted?</value>
+  </data>
+  <data name="animation" xml:space="preserve">
+    <value>Animáció</value>
+  </data>
+  <data name="animation_velocity" xml:space="preserve">
+    <value>Sebesség</value>
+  </data>
+  <data name="another_diplay_process_execute" xml:space="preserve">
+    <value>Egy másik tartalom már fut a LEDboxon.</value>
+  </data>
+  <data name="app_not_compatible" xml:space="preserve">
+    <value>Az alkalmazás verzója elavult, nem kompatibilis a LEDbox-szal. Frissíts a legutóbbi verzióra!</value>
+  </data>
+  <data name="are_you_sure" xml:space="preserve">
+    <value>Biztos, hogy folytatod?</value>
+  </data>
+  <data name="audio" xml:space="preserve">
+    <value>Hangbeállítások</value>
+  </data>
+  <data name="blinking" xml:space="preserve">
+    <value>Villog</value>
+  </data>
+  <data name="blue" xml:space="preserve">
+    <value>Kék</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Megszakítás</value>
+  </data>
+  <data name="change_connection" xml:space="preserve">
+    <value>Csatlakozási mód</value>
+  </data>
+  <data name="change_language" xml:space="preserve">
+    <value>Nyelv</value>
+  </data>
+  <data name="change_user" xml:space="preserve">
+    <value>Felhasználóváltás</value>
+  </data>
+  <data name="check_last_ledbox_version" xml:space="preserve">
+    <value>Frissítések ellenőrzése</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>Válassz!</value>
+  </data>
+  <data name="choose_bluetooth" xml:space="preserve">
+    <value>Válassz a kapcsolódni kívánt eszközök közül!</value>
+  </data>
+  <data name="color_text" xml:space="preserve">
+    <value>Betű szín</value>
+  </data>
+  <data name="config_saved" xml:space="preserve">
+    <value>Beállítások mentve</value>
+  </data>
+  <data name="confirm_deletion" xml:space="preserve">
+    <value>LEDbox-on tárolt fájlok törlése</value>
+  </data>
+  <data name="confirm_disinstallation" xml:space="preserve">
+    <value>Eltávolítod a válaszott elemet?</value>
+  </data>
+  <data name="confirm_installation" xml:space="preserve">
+    <value>Letöltöd és telepíted a válaszott elemet?</value>
+  </data>
+  <data name="connect" xml:space="preserve">
+    <value>Kapcsolódás</value>
+  </data>
+  <data name="connecting_before_ledbox" xml:space="preserve">
+    <value>Előbb kapcsolódj a LEDboxhoz!</value>
+  </data>
+  <data name="connecting_ledbox" xml:space="preserve">
+    <value>Kapcsolódás a LEDbox-hoz…</value>
+  </data>
+  <data name="connect_last_ledbox" xml:space="preserve">
+    <value>Kapcsolódsz a legutóbb használt LEDbox-hoz?</value>
+  </data>
+  <data name="connect_to_wifi" xml:space="preserve">
+    <value>Kapcsolódj a készülékkel ahhoz a  Wi-Fi hálózathoz, amelyhez a LEDbox is kapcsolódik.</value>
+  </data>
+  <data name="create_playlist" xml:space="preserve">
+    <value>Lejátszási lista létrehozása</value>
+  </data>
+  <data name="credits" xml:space="preserve">
+    <value>Rólunk</value>
+  </data>
+  <data name="current_setting" xml:space="preserve">
+    <value>Jelenlegi beállítások:</value>
+  </data>
+  <data name="custom_text" xml:space="preserve">
+    <value>SZÖVEGBEVITEL</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
+  <data name="delete_playlistaudio" xml:space="preserve">
+    <value>Minden hanglejátszási lista törlése a LEDboxról</value>
+  </data>
+  <data name="delete_playlistimage" xml:space="preserve">
+    <value>Minden feladat törlése a LEDbox-ról</value>
+  </data>
+  <data name="dhcp_restarted" xml:space="preserve">
+    <value>LAN hálózat újraindítása</value>
+  </data>
+  <data name="disable_mobile_connection" xml:space="preserve">
+    <value>A LEDbox-szal kialakítandó Wi-Fi kapcsolathoz, kapcsold ki a mobil adatforgalmat a készülékén!</value>
+  </data>
+  <data name="disconnect" xml:space="preserve">
+    <value>Kapcsolat bontása</value>
+  </data>
+  <data name="disconnect_for_change_language" xml:space="preserve">
+    <value>Nyelvváltoztatáshoz kapcsolat megszakítása a LEDbox-szal.</value>
+  </data>
+  <data name="disinstallation" xml:space="preserve">
+    <value>Eltávolítás</value>
+  </data>
+  <data name="downloading" xml:space="preserve">
+    <value>Letöltés…</value>
+  </data>
+  <data name="downloading_preinstall" xml:space="preserve">
+    <value>Gyári beállítások letöltése…</value>
+  </data>
+  <data name="download_and_install" xml:space="preserve">
+    <value>Letöltés és telepítés</value>
+  </data>
+  <data name="download_last_upgrade_completed" xml:space="preserve">
+    <value>LEDbox sikeresen frissítve</value>
+  </data>
+  <data name="download_list" xml:space="preserve">
+    <value>Letöltési lista…</value>
+  </data>
+  <data name="download_manual" xml:space="preserve">
+    <value>Kézikönyv letöltése</value>
+  </data>
+  <data name="duplicate" xml:space="preserve">
+    <value>Duplázás</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Módosítás</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elemek</value>
+  </data>
+  <data name="enter_ip_ledbox" xml:space="preserve">
+    <value>Adja meg a LEDbox IP címét (próbálja a 172.24.1.1) és próbáljon újrakapcsolódni!</value>
+  </data>
+  <data name="error_communication" xml:space="preserve">
+    <value>Hiba a LEDbox-szal történő kommunikációban</value>
+  </data>
+  <data name="error_connection" xml:space="preserve">
+    <value>Kapcsolódási hiba</value>
+  </data>
+  <data name="error_connection_to_ledbox" xml:space="preserve">
+    <value>Hiba a LEDbox-hoz való kapcsolódásban</value>
+  </data>
+  <data name="error_connection_to_ledbox_bluetooth" xml:space="preserve">
+    <value>Hiba történt a Bluetooth kapcsolat kialakítása közben. Ellenőrizze, hogy a LEDbox be van kapcsolva!</value>
+  </data>
+  <data name="error_download" xml:space="preserve">
+    <value>Hiba a letöltésben</value>
+  </data>
+  <data name="error_image" xml:space="preserve">
+    <value>Hiba a képkialakításban</value>
+  </data>
+  <data name="error_read" xml:space="preserve">
+    <value>Olvasási hiba</value>
+  </data>
+  <data name="error_upload" xml:space="preserve">
+    <value>Hiba a LEDbox-ra történő feltöltésben</value>
+  </data>
+  <data name="error_zip" xml:space="preserve">
+    <value>Hiba a médiafájlok készítése közben</value>
+  </data>
+  <data name="from_local" xml:space="preserve">
+    <value>Saját készülékről</value>
+  </data>
+  <data name="from_online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="gallery" xml:space="preserve">
+    <value>Galéria</value>
+  </data>
+  <data name="green" xml:space="preserve">
+    <value>Zöld</value>
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>Képek</value>
+  </data>
+  <data name="image_cover" xml:space="preserve">
+    <value>LEDbox háttér</value>
+  </data>
+  <data name="image_video" xml:space="preserve">
+    <value>Képek</value>
+  </data>
+  <data name="image_wait" xml:space="preserve">
+    <value>Hátterek</value>
+  </data>
+  <data name="insert_name_playlist" xml:space="preserve">
+    <value>Adja meg a lejátszási lista nevét!</value>
+  </data>
+  <data name="insert_name_practice" xml:space="preserve">
+    <value>Adja meg az elvégzendő feladat nevét!</value>
+  </data>
+  <data name="insert_title" xml:space="preserve">
+    <value>Adja meg a címet!</value>
+  </data>
+  <data name="installation" xml:space="preserve">
+    <value>Telepítés</value>
+  </data>
+  <data name="installation_complete" xml:space="preserve">
+    <value>A telepítés befejeződött.</value>
+  </data>
+  <data name="interface_for_only_admin" xml:space="preserve">
+    <value>Ez a felület csak az első olyan felhasználó lehet, aki csatlakozott a LEDboxhoz.</value>
+  </data>
+  <data name="interface_for_only_bluetooth_connection" xml:space="preserve">
+    <value>Ez a felület csak Bluetooth kapcsolattal használható.</value>
+  </data>
+  <data name="interface_for_only_wifi_connection" xml:space="preserve">
+    <value>Ez a felület csak Wi-Fi kapcsolattal használható.</value>
+  </data>
+  <data name="interface_yet_present" xml:space="preserve">
+    <value>Egy korábbi felhasználói felület is elérhető, mint amit telepít. Eltávolítja a korábbit?</value>
+  </data>
+  <data name="ip_lan" xml:space="preserve">
+    <value>IP cím (LAN)</value>
+  </data>
+  <data name="ip_wifi" xml:space="preserve">
+    <value>IP cím (WiFi)</value>
+  </data>
+  <data name="item_only_on_ledbox" xml:space="preserve">
+    <value>Ez a tartalom csak a LEDboxon elérhető.Lejátsza / Szünetelteti / Leállítja?</value>
+  </data>
+  <data name="ledbox_connected" xml:space="preserve">
+    <value>A LEDbox megfelelően kapcsolódott.</value>
+  </data>
+  <data name="ledbox_functions" xml:space="preserve">
+    <value>LEDbox Funkciók</value>
+  </data>
+  <data name="ledbox_not_found" xml:space="preserve">
+    <value>Nem található LEDbox.</value>
+  </data>
+  <data name="ledbox_search" xml:space="preserve">
+    <value>LEDbox keresése…</value>
+  </data>
+  <data name="ledbox_updated" xml:space="preserve">
+    <value>A LEDbox újraindul a frissítés befejezéséhez.</value>
+  </data>
+  <data name="list_empty_practice_remote" xml:space="preserve">
+    <value>Semmilyen feladat nem található a LEDboxon.</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Töltés…</value>
+  </data>
+  <data name="login_intro" xml:space="preserve">
+    <value>Szia! Add meg az adataidat, majd nyomd meg az OK-t!</value>
+  </data>
+  <data name="long_beep" xml:space="preserve">
+    <value>hosszú csengő</value>
+  </data>
+  <data name="long_beeps" xml:space="preserve">
+    <value>rövid csengő</value>
+  </data>
+  <data name="master_ip_not_valid" xml:space="preserve">
+    <value>Érvénytelen IP cím (master)</value>
+  </data>
+  <data name="match_score" xml:space="preserve">
+    <value>EREDMÉNY</value>
+  </data>
+  <data name="memory_ledbox" xml:space="preserve">
+    <value>LEDbox Memória</value>
+  </data>
+  <data name="message_sended" xml:space="preserve">
+    <value>Utasítás elküldve a LEDbox-nak</value>
+  </data>
+  <data name="mode_execute" xml:space="preserve">
+    <value>Kommunikációs szerep</value>
+    <comment>?</comment>
+  </data>
+  <data name="modifier_layout" xml:space="preserve">
+    <value>Kijelző mód</value>
+  </data>
+  <data name="move_down" xml:space="preserve">
+    <value>Áthelyezés alulra</value>
+  </data>
+  <data name="move_up" xml:space="preserve">
+    <value>Áthelyezés felülre</value>
+  </data>
+  <data name="network_gateway_not_valid" xml:space="preserve">
+    <value>Átjáró IP cím érvénytelen.</value>
+  </data>
+  <data name="network_ip_not_valid" xml:space="preserve">
+    <value>IP cím érvénytelen.</value>
+  </data>
+  <data name="network_modality" xml:space="preserve">
+    <value>LAN mód</value>
+  </data>
+  <data name="network_subnet_not_valid" xml:space="preserve">
+    <value>Hálózati maszk érvénytelen</value>
+  </data>
+  <data name="new_firmware_ledbox_downloaded" xml:space="preserve">
+    <value>Legújabb LEDbox készülékszoftver letöltve.</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>NEM</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>semmi</value>
+  </data>
+  <data name="none_playlist_item" xml:space="preserve">
+    <value>A lejátszási lista üres.</value>
+  </data>
+  <data name="none_practice_item" xml:space="preserve">
+    <value>Nincs megadott feladat.</value>
+  </data>
+  <data name="no_device_bluetooth" xml:space="preserve">
+    <value>Nem található LEDbox.</value>
+  </data>
+  <data name="no_elements" xml:space="preserve">
+    <value>A lista üres.</value>
+  </data>
+  <data name="no_internet" xml:space="preserve">
+    <value>nincs internetkapcsolat.</value>
+  </data>
+  <data name="no_ledbox_compatible" xml:space="preserve">
+    <value>A LEDbox szoftver ezen verziója nem kompatibilis ezzel az Alkalmazással.</value>
+  </data>
+  <data name="no_ledbox_connect_to_practice_remote" xml:space="preserve">
+    <value>Kapcsolódj egy LEDboxhoz, hogy elinduljanak a feltöltött feladatok.</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="online_new_upgrade_ledbox" xml:space="preserve">
+    <value>Elérhető a LEDbox legújabb frissítése. Letölti?</value>
+  </data>
+  <data name="on_ledbox" xml:space="preserve">
+    <value>Csak a LEDbox-on</value>
+  </data>
+  <data name="open_layout_parameters" xml:space="preserve">
+    <value>Mutasd a beállításokat!</value>
+  </data>
+  <data name="open_layout_waiting" xml:space="preserve">
+    <value>Mutasd a hátteret!</value>
+  </data>
+  <data name="orange" xml:space="preserve">
+    <value>Narancs</value>
+  </data>
+  <data name="pause" xml:space="preserve">
+    <value>szünet</value>
+  </data>
+  <data name="play" xml:space="preserve">
+    <value>lejátszás</value>
+  </data>
+  <data name="playlist" xml:space="preserve">
+    <value>LEJÁTSZÁSI LISTA</value>
+  </data>
+  <data name="playlist_audio" xml:space="preserve">
+    <value>LEJÁTSZÁSI LISTA (Hang)</value>
+  </data>
+  <data name="playlist_imagevideo" xml:space="preserve">
+    <value>LEJÁTSZÁSI LISTA (Kép)</value>
+  </data>
+  <data name="practice" xml:space="preserve">
+    <value>FELADATOK</value>
+  </data>
+  <data name="preferences" xml:space="preserve">
+    <value>Tulajdonságok</value>
+  </data>
+  <data name="preset" xml:space="preserve">
+    <value>Szabad feladatok</value>
+  </data>
+  <data name="preview" xml:space="preserve">
+    <value>Előnézet</value>
+  </data>
+  <data name="purple" xml:space="preserve">
+    <value>Lila</value>
+  </data>
+  <data name="reboot" xml:space="preserve">
+    <value>LEDbox újraindítása</value>
+  </data>
+  <data name="rebooting" xml:space="preserve">
+    <value>A LEDbox újraindul…</value>
+  </data>
+  <data name="reboot_app" xml:space="preserve">
+    <value>A beállítások alkalmazásához újra kell indítani a LEDbox-ot. Újraindítja?</value>
+  </data>
+  <data name="red" xml:space="preserve">
+    <value>Piros</value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>Visszaállítás</value>
+  </data>
+  <data name="restart_dhcp" xml:space="preserve">
+    <value>LAN újraindítása</value>
+  </data>
+  <data name="run_update" xml:space="preserve">
+    <value>Frissíti most a LEDbox-ot?</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="scroller_bottom_top" xml:space="preserve">
+    <value>Gördítés (lentről felfelé)</value>
+  </data>
+  <data name="scroller_left_right" xml:space="preserve">
+    <value>Gördítés (balról jobbra)</value>
+  </data>
+  <data name="scroller_right_left" xml:space="preserve">
+    <value>Gördítés (jobbról balra)</value>
+  </data>
+  <data name="scroller_top_bottom" xml:space="preserve">
+    <value>Gördítés (fentről lefelé)</value>
+  </data>
+  <data name="searching" xml:space="preserve">
+    <value>Keresés…</value>
+  </data>
+  <data name="searching_bluetooth" xml:space="preserve">
+    <value>LEDbox keresése…</value>
+  </data>
+  <data name="select_connection" xml:space="preserve">
+    <value>Kapcsolódás a LEDbox-hoz</value>
+  </data>
+  <data name="select_language" xml:space="preserve">
+    <value>Válassz nyelvet!</value>
+  </data>
+  <data name="setting" xml:space="preserve">
+    <value>BEÁLLÍTÁSOK</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Beállítások</value>
+  </data>
+  <data name="settings_ledbox" xml:space="preserve">
+    <value>LEDbox beállításai</value>
+  </data>
+  <data name="short_beep" xml:space="preserve">
+    <value>rövid csengő</value>
+  </data>
+  <data name="short_beeps" xml:space="preserve">
+    <value>hosszú csengő</value>
+  </data>
+  <data name="size_text" xml:space="preserve">
+    <value>Betűméret</value>
+  </data>
+  <data name="start_dhcp_restart" xml:space="preserve">
+    <value>LAN hálózat újraindítása…</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>stop</value>
+  </data>
+  <data name="store" xml:space="preserve">
+    <value>BOLT</value>
+  </data>
+  <data name="success_connection" xml:space="preserve">
+    <value>Sikeres kapcsolódás.</value>
+  </data>
+  <data name="sure_disconnect" xml:space="preserve">
+    <value>Biztosan kijelentkezik a LEDbox-ból?</value>
+  </data>
+  <data name="text" xml:space="preserve">
+    <value>Szöveg</value>
+  </data>
+  <data name="time_visibility" xml:space="preserve">
+    <value>Láthatóság</value>
+  </data>
+  <data name="trash" xml:space="preserve">
+    <value>Lomtár</value>
+  </data>
+  <data name="trash_all_media" xml:space="preserve">
+    <value>MINDEN MÉDIA FÁJL</value>
+  </data>
+  <data name="update_ledbox" xml:space="preserve">
+    <value>LEDbox frissítése</value>
+  </data>
+  <data name="update_to" xml:space="preserve">
+    <value>Frissítés újbóli telepítése</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Felhasználónév</value>
+  </data>
+  <data name="username_required" xml:space="preserve">
+    <value>Felhasználónév kötelező</value>
+  </data>
+  <data name="use_plus_button" xml:space="preserve">
+    <value>Kattints a + gombra a fejlécen új tartalom hozzáadásához.</value>
+  </data>
+  <data name="version" xml:space="preserve">
+    <value>Verzió</value>
+  </data>
+  <data name="video" xml:space="preserve">
+    <value>Videó</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>Figyelem</value>
+  </data>
+  <data name="warning_scan_bluetooth" xml:space="preserve">
+    <value>FIGYELEM: A LEDbox kevesebb, mint egy perce lehet bekapcsolva.</value>
+  </data>
+  <data name="weight_gym" xml:space="preserve">
+    <value>Bemelegítés</value>
+  </data>
+  <data name="white" xml:space="preserve">
+    <value>Fehér</value>
+  </data>
+  <data name="wifi_modality" xml:space="preserve">
+    <value>Wi-Fi mód</value>
+  </data>
+  <data name="will_be_downloaded" xml:space="preserve">
+    <value>le lesz töltve</value>
+  </data>
+  <data name="yellow" xml:space="preserve">
+    <value>Sárga</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Igen</value>
+  </data>
+  <data name="you_download_last_ledbox_upgrade" xml:space="preserve">
+    <value>Letöltötted a LEDbox legutóbbi frissítését.</value>
+  </data>
+  <data name="you_have_last_ledbox_upgrade" xml:space="preserve">
+    <value>Már rendelkezel a LEDbox legutóbbi frissítésével.</value>
+  </data>
+  <data name="open_store" xml:space="preserve">
+    <value>LEDbox Bolt</value>
+  </data>
+  <data name="must_enabled_location" xml:space="preserve">
+    <value>A helymeghatározást engedélyezni kell a WiFi kapcsolathoz.</value>
+  </data>
+  <data name="no_internet_wifi_direct" xml:space="preserve">
+    <value>Az online áruházhoz való hozzáféréshez le kell tiltania a Wifi kapcsolatot a LEDboxról, és csatlakoznia kell az internethálózathoz (Wifi vagy mobil)</value>
+  </data>
+  <data name="sport_required" xml:space="preserve">
+    <value>Ki kell választania egy sportágat</value>
+  </data>
+  <data name="creation_progress" xml:space="preserve">
+    <value>A fájl létrehozása folyamatban van...</value>
+  </data>
+  <data name="advanced_function_ledbox" xml:space="preserve">
+    <value>Haladó funkciók LEDbox</value>
+  </data>
+  <data name="configure_ledbox" xml:space="preserve">
+    <value>LEDbox konfiguráció</value>
+  </data>
+  <data name="use_store_button" xml:space="preserve">
+    <value>Kattintson a gomb tárolására egy új mérkőzés eredményének letöltéséhez</value>
+  </data>
+  <data name="search_other_ledbox" xml:space="preserve">
+    <value>Megvan! Szeretnél másik LEDboxot keresni?</value>
+  </data>
+</root>

@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="connect" xml:space="preserve">
+    <value>Connetti</value>
+  </data>
+  <data name="disconnect" xml:space="preserve">
+    <value>Disconnetti</value>
+  </data>
+  <data name="sure_disconnect" xml:space="preserve">
+    <value>Sicuro di voler disconnettersi dal LEDbox?</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>Attenzione</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Si</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="preview" xml:space="preserve">
+    <value>Anteprima</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="move_up" xml:space="preserve">
+    <value>Sposta su</value>
+  </data>
+  <data name="move_down" xml:space="preserve">
+    <value>Sposta giù</value>
+  </data>
+  <data name="action" xml:space="preserve">
+    <value>Seleziona comando:</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>Impostazioni</value>
+  </data>
+  <data name="settings_ledbox" xml:space="preserve">
+    <value>Impostazioni LEDbox</value>
+  </data>
+  <data name="change_language" xml:space="preserve">
+    <value>Lingua</value>
+  </data>
+  <data name="change_user" xml:space="preserve">
+    <value>Cambia utente</value>
+  </data>
+  <data name="change_connection" xml:space="preserve">
+    <value>Tipo connessione</value>
+  </data>
+  <data name="preferences" xml:space="preserve">
+    <value>Preferenze</value>
+  </data>
+  <data name="configure_ledbox" xml:space="preserve">
+    <value>Configura LEDbox</value>
+  </data>
+  <data name="reboot_app" xml:space="preserve">
+    <value>Per rendere effettive le modifiche riavviare il LEDbox. Riavviarlo ora?</value>
+  </data>
+  <data name="select_language" xml:space="preserve">
+    <value>Seleziona la lingua</value>
+  </data>
+  <data name="select_connection" xml:space="preserve">
+    <value>Seleziona la connessione al LEDbox</value>
+  </data>
+  <data name="playlist" xml:space="preserve">
+    <value>PLAYLIST</value>
+  </data>
+  <data name="match_score" xml:space="preserve">
+    <value>SEGNAPUNTI</value>
+  </data>
+  <data name="practice" xml:space="preserve">
+    <value>ESERCIZI</value>
+  </data>
+  <data name="weight_gym" xml:space="preserve">
+    <value>Ginnastica</value>
+  </data>
+  <data name="custom_text" xml:space="preserve">
+    <value>TESTO LIBERO</value>
+  </data>
+  <data name="create_playlist" xml:space="preserve">
+    <value>Crea playlist</value>
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>Immagini</value>
+  </data>
+  <data name="video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="image_video" xml:space="preserve">
+    <value>Immagini</value>
+  </data>
+  <data name="audio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="insert_title" xml:space="preserve">
+    <value>Inserisci il titolo</value>
+  </data>
+  <data name="connecting_before_ledbox" xml:space="preserve">
+    <value>Prima effettuare la connessione al LEDbox.</value>
+  </data>
+  <data name="current_setting" xml:space="preserve">
+    <value>Impostazione corrente: </value>
+  </data>
+  <data name="installation" xml:space="preserve">
+    <value>Installazione</value>
+  </data>
+  <data name="disinstallation" xml:space="preserve">
+    <value>Disinstallazione</value>
+  </data>
+  <data name="confirm_installation" xml:space="preserve">
+    <value>Scaricare ed installare l'elemento selezionato?</value>
+  </data>
+  <data name="confirm_disinstallation" xml:space="preserve">
+    <value>Disinstallare l'elemento selezionato?</value>
+  </data>
+  <data name="installation_complete" xml:space="preserve">
+    <value>Installazione completata</value>
+  </data>
+  <data name="download_list" xml:space="preserve">
+    <value>Scaricamento lista in corso...</value>
+  </data>
+  <data name="downloading" xml:space="preserve">
+    <value>Scaricamento in corso...</value>
+  </data>
+  <data name="download_and_install" xml:space="preserve">
+    <value>Scarica ed installa</value>
+  </data>
+  <data name="success_connection" xml:space="preserve">
+    <value>Connessione effettuata correttamente.</value>
+  </data>
+  <data name="error_connection" xml:space="preserve">
+    <value>Errore durante la connessione</value>
+  </data>
+  <data name="rebooting" xml:space="preserve">
+    <value>Riavvio del LEDbox in corso ...</value>
+  </data>
+  <data name="error_download" xml:space="preserve">
+    <value>Errore durante lo scaricamento</value>
+  </data>
+  <data name="error_read" xml:space="preserve">
+    <value>Errore di lettura</value>
+  </data>
+  <data name="error_communication" xml:space="preserve">
+    <value>Errore di comunicazione con il LEDbox</value>
+  </data>
+  <data name="error_image" xml:space="preserve">
+    <value>Errore nella creazione dell'immagine</value>
+  </data>
+  <data name="error_zip" xml:space="preserve">
+    <value>Errore nella creazione del pacchetto dei file multimediali.</value>
+  </data>
+  <data name="elements" xml:space="preserve">
+    <value>elementi</value>
+  </data>
+  <data name="no_elements" xml:space="preserve">
+    <value>Nessun elemento inserito nella lista.</value>
+  </data>
+  <data name="no_ledbox_compatible" xml:space="preserve">
+    <value>La versione del software del LEDbox non è compatibile con questa App.</value>
+  </data>
+  <data name="access_denied" xml:space="preserve">
+    <value>Non è possibile utilizzare questa interfaccia perchè il LEDbox è già controllato da un altro utente.</value>
+  </data>
+  <data name="interface_yet_present" xml:space="preserve">
+    <value>È presente un'interfaccia più vecchia di quella che si sta installando. Disinstallare la vecchia interfaccia?</value>
+  </data>
+  <data name="animation" xml:space="preserve">
+    <value>Animazione</value>
+  </data>
+  <data name="color_text" xml:space="preserve">
+    <value>Colore</value>
+  </data>
+  <data name="login_intro" xml:space="preserve">
+    <value>Ciao, inserisci qui i tuoi dati poi premi su OK.</value>
+  </data>
+  <data name="size_text" xml:space="preserve">
+    <value>Dimensione</value>
+  </data>
+  <data name="text" xml:space="preserve">
+    <value>Testo</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Nome utente</value>
+  </data>
+  <data name="credits" xml:space="preserve">
+    <value>Informazioni su...</value>
+  </data>
+  <data name="orange" xml:space="preserve">
+    <value>Arancione</value>
+  </data>
+  <data name="blue" xml:space="preserve">
+    <value>Blu</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>Scegli</value>
+  </data>
+  <data name="download_manual" xml:space="preserve">
+    <value>Scarica manuale</value>
+  </data>
+  <data name="image_wait" xml:space="preserve">
+    <value>Copertina</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>nessuno</value>
+  </data>
+  <data name="red" xml:space="preserve">
+    <value>Rosso</value>
+  </data>
+  <data name="time_visibility" xml:space="preserve">
+    <value>Visibilità</value>
+  </data>
+  <data name="green" xml:space="preserve">
+    <value>Verde</value>
+  </data>
+  <data name="version" xml:space="preserve">
+    <value>Versione</value>
+  </data>
+  <data name="purple" xml:space="preserve">
+    <value>Viola</value>
+  </data>
+  <data name="white" xml:space="preserve">
+    <value>Bianco</value>
+  </data>
+  <data name="wifi_modality" xml:space="preserve">
+    <value>Modalità di collegamento Wi-Fi</value>
+  </data>
+  <data name="yellow" xml:space="preserve">
+    <value>Giallo</value>
+  </data>
+  <data name="choose_bluetooth" xml:space="preserve">
+    <value>Seleziona il LEDbox a cui collegarti</value>
+  </data>
+  <data name="connecting_ledbox" xml:space="preserve">
+    <value>Connessione a LEDbox in corso ...</value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>Azzera</value>
+  </data>
+  <data name="activity" xml:space="preserve">
+    <value>ATTIVITA'</value>
+  </data>
+  <data name="activitydialog" xml:space="preserve">
+    <value>Ci sono attività in corso sul LEDbox. Visualizzarle?</value>
+  </data>
+  <data name="duplicate" xml:space="preserve">
+    <value>Duplica</value>
+  </data>
+  <data name="animation_velocity" xml:space="preserve">
+    <value>Velocità</value>
+  </data>
+  <data name="config_saved" xml:space="preserve">
+    <value>Configurazioni salvate</value>
+  </data>
+  <data name="ledbox_updated" xml:space="preserve">
+    <value>Sto riavviando il LEDbox per completare l'aggiornamento.</value>
+  </data>
+  <data name="update_ledbox" xml:space="preserve">
+    <value>Aggiornamento LEDbox</value>
+  </data>
+  <data name="run_update" xml:space="preserve">
+    <value>Avviare ora l'aggiornamento del LEDbox?</value>
+  </data>
+  <data name="message_sended" xml:space="preserve">
+    <value>Comando inviato al LEDbox</value>
+  </data>
+  <data name="confirm_deletion" xml:space="preserve">
+    <value>File eliminati correttamente sul LEDbox.</value>
+  </data>
+  <data name="delete_playlistaudio" xml:space="preserve">
+    <value>Elimina tutte le playlist audio sul LEDbox</value>
+  </data>
+  <data name="delete_playlistimage" xml:space="preserve">
+    <value>Elimina tutte le sequenze di esercizi sul LEDbox</value>
+  </data>
+  <data name="are_you_sure" xml:space="preserve">
+    <value>Sicuro di voler continuare con l'operazione?</value>
+  </data>
+  <data name="playlist_imagevideo" xml:space="preserve">
+    <value>PLAYLIST (Immagini)</value>
+  </data>
+  <data name="playlist_audio" xml:space="preserve">
+    <value>PLAYLIST (Audio)</value>
+  </data>
+  <data name="trash" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="trash_all_media" xml:space="preserve">
+    <value>TUTTI I FILE MULTIMEDIALI</value>
+  </data>
+  <data name="insert_name_practice" xml:space="preserve">
+    <value>Inserisci il nome della sequenza di esercizi</value>
+  </data>
+  <data name="insert_name_playlist" xml:space="preserve">
+    <value>Inserisci il nome della playlist</value>
+  </data>
+  <data name="none_practice_item" xml:space="preserve">
+    <value>Nessun esercizio inserito nella sequenza.</value>
+  </data>
+  <data name="none_playlist_item" xml:space="preserve">
+    <value>Nessun file inserito nella playlist.</value>
+  </data>
+  <data name="another_diplay_process_execute" xml:space="preserve">
+    <value>Un altro processo è già in esecuzione sul LEDbox.</value>
+  </data>
+  <data name="image_cover" xml:space="preserve">
+    <value>Copertina sul LEDbox</value>
+  </data>
+  <data name="enter_ip_ledbox" xml:space="preserve">
+    <value>Inserisci l'indirizzo IP del LEDbox (prova con 172.24.1.1) e riprova a connetterti.</value>
+  </data>
+  <data name="ledbox_connected" xml:space="preserve">
+    <value>LEDbox connesso correttamente.</value>
+  </data>
+  <data name="ledbox_not_found" xml:space="preserve">
+    <value>Nessun LEDbox trovato.</value>
+  </data>
+  <data name="ledbox_search" xml:space="preserve">
+    <value>Ricerca del LEDbox in corso...</value>
+  </data>
+  <data name="username_required" xml:space="preserve">
+    <value>Nome utente obbligatorio</value>
+  </data>
+  <data name="connect_to_wifi" xml:space="preserve">
+    <value>Collegare il device alla rete Wi-Fi in cui è collegato il LEDbox.</value>
+  </data>
+  <data name="error_connection_to_ledbox" xml:space="preserve">
+    <value>Errore durante la connessione a LEDbox</value>
+  </data>
+  <data name="error_connection_to_ledbox_bluetooth" xml:space="preserve">
+    <value>Errore durante la connessione Bluetooth. Verificare che il LEDbox sia acceso.</value>
+  </data>
+  <data name="memory_ledbox" xml:space="preserve">
+    <value>Memoria LEDbox</value>
+  </data>
+  <data name="advanced_function_ledbox" xml:space="preserve">
+    <value>Funzioni avanzate LEDbox</value>
+  </data>
+  <data name="searching" xml:space="preserve">
+    <value>Ricerca...</value>
+  </data>
+  <data name="no_device_bluetooth" xml:space="preserve">
+    <value>Nessun LEDbox trovato.</value>
+  </data>
+  <data name="searching_bluetooth" xml:space="preserve">
+    <value>Cerca LEDbox</value>
+  </data>
+  <data name="about_us" xml:space="preserve">
+    <value>INFORMAZIONI</value>
+  </data>
+  <data name="setting" xml:space="preserve">
+    <value>CONFIGURAZIONE</value>
+  </data>
+  <data name="blinking" xml:space="preserve">
+    <value>Lampeggiante</value>
+  </data>
+  <data name="long_beep" xml:space="preserve">
+    <value>suono lungo</value>
+  </data>
+  <data name="long_beeps" xml:space="preserve">
+    <value>suoni lunghi</value>
+  </data>
+  <data name="scroller_bottom_top" xml:space="preserve">
+    <value>Scorrimento (da sotto verso sopra)</value>
+  </data>
+  <data name="scroller_left_right" xml:space="preserve">
+    <value>Scorrimento (da sinistra verso destra)</value>
+  </data>
+  <data name="scroller_right_left" xml:space="preserve">
+    <value>Scorrimento (da destra verso sinistra)</value>
+  </data>
+  <data name="scroller_top_bottom" xml:space="preserve">
+    <value>Scorrimento (da sopra verso sotto)</value>
+  </data>
+  <data name="short_beep" xml:space="preserve">
+    <value>suono breve</value>
+  </data>
+  <data name="short_beeps" xml:space="preserve">
+    <value>suoni brevi</value>
+  </data>
+  <data name="store" xml:space="preserve">
+    <value>STORE</value>
+  </data>
+  <data name="ledbox_functions" xml:space="preserve">
+    <value>Funzionalità LEDbox</value>
+  </data>
+  <data name="reboot" xml:space="preserve">
+    <value>Riavvia LEDBox</value>
+  </data>
+  <data name="update_to" xml:space="preserve">
+    <value>Reinstalla aggionamento </value>
+  </data>
+  <data name="gallery" xml:space="preserve">
+    <value>Galleria</value>
+  </data>
+  <data name="preset" xml:space="preserve">
+    <value>Esercizi liberi</value>
+  </data>
+  <data name="downloading_preinstall" xml:space="preserve">
+    <value>Scaricamento dati di default in corso...</value>
+  </data>
+  <data name="from_local" xml:space="preserve">
+    <value>Dal tuo dispositivo</value>
+  </data>
+  <data name="from_online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="list_empty_practice_remote" xml:space="preserve">
+    <value>Nessuna sequenza di esercizi presente sul LEDbox corrente.</value>
+  </data>
+  <data name="no_ledbox_connect_to_practice_remote" xml:space="preserve">
+    <value>Connettiti ad un LEDbox per accedere alla sua sequenza di esercizi.</value>
+  </data>
+  <data name="item_only_on_ledbox" xml:space="preserve">
+    <value>Questo elemento è presente solo sul LEDbox. È possibile solo avviare / mettere in pausa / interropere l'esecuzione.</value>
+  </data>
+  <data name="on_ledbox" xml:space="preserve">
+    <value>Solo sul LEDbox</value>
+  </data>
+  <data name="disable_mobile_connection" xml:space="preserve">
+    <value>Per connettersi in Wi-Fi al LEDbox disabilitare i Dati mobili del dispositivo.</value>
+  </data>
+  <data name="disconnect_for_change_language" xml:space="preserve">
+    <value>Per cambiare la lingua ho disconnesso il LEDbox.</value>
+  </data>
+  <data name="no_internet" xml:space="preserve">
+    <value>Connessione ad internet assente.</value>
+  </data>
+  <data name="check_last_ledbox_version" xml:space="preserve">
+    <value>Scarica aggiornamento LEDbox</value>
+  </data>
+  <data name="online_new_upgrade_ledbox" xml:space="preserve">
+    <value>È disponibile un nuovo aggiornamento per LEDbox. Scaricarlo ora?</value>
+  </data>
+  <data name="you_have_last_ledbox_upgrade" xml:space="preserve">
+    <value>Hai già l'ultima versione di aggiornamento del LEDbox.</value>
+  </data>
+  <data name="you_download_last_ledbox_upgrade" xml:space="preserve">
+    <value>Hai scaricato l'ultima versione di aggiornamento del LEDbox.</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Caricamento in corso ...</value>
+  </data>
+  <data name="error_upload" xml:space="preserve">
+    <value>Errore nel caricamento sul LEDbox.</value>
+  </data>
+  <data name="warning_scan_bluetooth" xml:space="preserve">
+    <value>ATTENZIONE: ll LEDbox deve essere acceso da non più di un minuto.</value>
+  </data>
+  <data name="new_firmware_ledbox_downloaded" xml:space="preserve">
+    <value>Nuovo versione firmware del LEDbox scaricato.</value>
+  </data>
+  <data name="connect_last_ledbox" xml:space="preserve">
+    <value>Avviare la connessione all'ultimo LEDbox a cui ti sei collegato?</value>
+  </data>
+  <data name="modifier_layout" xml:space="preserve">
+    <value>Modalità display</value>
+  </data>
+  <data name="master_ip_not_valid" xml:space="preserve">
+    <value>Indirizzo IP (master) non valido</value>
+  </data>
+  <data name="network_ip_not_valid" xml:space="preserve">
+    <value>Indirizzo IP (sezione Network) non valido.</value>
+  </data>
+  <data name="network_subnet_not_valid" xml:space="preserve">
+    <value>Indirizzo Subnet (sezione Network) non valido</value>
+  </data>
+  <data name="network_gateway_not_valid" xml:space="preserve">
+    <value>Indirizzo IP gateway (sezione Network) non valido.</value>
+  </data>
+  <data name="network_modality" xml:space="preserve">
+    <value>Modalità di collegamento LAN</value>
+  </data>
+  <data name="open_layout_parameters" xml:space="preserve">
+    <value>Mostra i parametri</value>
+  </data>
+  <data name="mode_execute" xml:space="preserve">
+    <value>Ruolo nella comunicazione</value>
+  </data>
+  <data name="open_layout_waiting" xml:space="preserve">
+    <value>Mostra copertina</value>
+  </data>
+  <data name="interface_for_only_admin" xml:space="preserve">
+    <value>Questa interfaccia può essere utilizzata solo dal primo utente che si è connesso sul LEDbox.</value>
+  </data>
+  <data name="interface_for_only_wifi_connection" xml:space="preserve">
+    <value>Questa interfaccia può essere utilizzata solo con connessioni Wi-Fi.</value>
+  </data>
+  <data name="interface_for_only_bluetooth_connection" xml:space="preserve">
+    <value>Questa interfaccia può essere utilizzata solo con connessioni Bluetooth.</value>
+  </data>
+  <data name="pause" xml:space="preserve">
+    <value>pausa</value>
+  </data>
+  <data name="play" xml:space="preserve">
+    <value>avvia</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>stop</value>
+  </data>
+  <data name="will_be_downloaded" xml:space="preserve">
+    <value>verranno scaricati</value>
+  </data>
+  <data name="download_last_upgrade_completed" xml:space="preserve">
+    <value>Aggiornamento LEDbox scaricato correttamente.</value>
+  </data>
+  <data name="use_plus_button" xml:space="preserve">
+    <value>Premi l'icona con il + per aggiungere un nuovo elemento.</value>
+  </data>
+  <data name="use_store_button" xml:space="preserve">
+    <value>Premi l'icona store per scaricare un nuovo segnapunti.</value>
+  </data>
+  <data name="restart_dhcp" xml:space="preserve">
+    <value>Riavvia rete LAN</value>
+  </data>
+  <data name="dhcp_restarted" xml:space="preserve">
+    <value>Rete LAN riavviata</value>
+  </data>
+  <data name="start_dhcp_restart" xml:space="preserve">
+    <value>Riavvia rete LAN in corso ...</value>
+  </data>
+  <data name="ip_lan" xml:space="preserve">
+    <value>Indirizzo IP (LAN)</value>
+  </data>
+  <data name="ip_wifi" xml:space="preserve">
+    <value>Indirizzo IP (Wifi)</value>
+  </data>
+  <data name="app_not_compatible" xml:space="preserve">
+    <value>La versione dell'app non è compatibile con questo LEDbox. Aggiornare l'app all'ultima versione disponibile.</value>
+  </data>
+  <data name="open_store" xml:space="preserve">
+    <value>LEDbox Store</value>
+  </data>
+  <data name="must_enabled_location" xml:space="preserve">
+    <value>E' necessario abilitare la Geolocalizzazione per la connessione WiFi.</value>
+  </data>
+  <data name="no_internet_wifi_direct" xml:space="preserve">
+    <value>Devi disattivare la connessione Wifi del LEDbox e collegarti ad una rete internet (Wifi o mobile) per accedere ai contenuti online</value>
+  </data>
+  <data name="sport_required" xml:space="preserve">
+    <value>Selezionare uno sport</value>
+  </data>
+  <data name="creation_progress" xml:space="preserve">
+    <value>Creazione del file in corso...</value>
+  </data>
+  <data name="search_other_ledbox" xml:space="preserve">
+    <value>Cercare altri LEDbox nella rete?</value>
+  </data>
+</root>

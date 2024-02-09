@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:ledbox;assembly=ledbox"
+             x:Class="ledbox.PlaylistModalView"
+             Title="Playlist"                       
+            BackgroundColor="DarkCyan" >
+    
+    
+    
+    <!--DEPRECATA-->
+    
+    
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*"/>
+            <RowDefinition Height="0.1*"/>
+            
+        </Grid.RowDefinitions>
+
+        <Image  Style="{StaticResource bg_imageStyle}" ></Image>
+
+        <ListView  x:Name="lstView" Grid.Row="0" RowHeight="70" 
+                   Style="{StaticResource ListViewStyle}"                    
+                   ItemsSource="{Binding OPlaylist}"
+                   ItemTapped="Handle_ItemTapped"
+                   VerticalOptions="FillAndExpand"
+                   RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Style="{StaticResource CellStackStyle}" >
+                            <ContentView Padding="5" Margin="0"  HorizontalOptions="Start" BackgroundColor="{Binding BackgroundStopIcon}"></ContentView>
+                            <Label Text = "{Binding Title}" Style="{StaticResource Title_CellStackStyle}" />
+                            <Label Text = "{Binding Message}" Style="{StaticResource Title_CellStackStyle}" />
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="10" HorizontalOptions="End">
+                                <Label Text = "{Binding TotalDuration}" HorizontalOptions="End" FontSize="Medium" Style="{StaticResource SubTitle_CellStackStyle}"/>
+                                <Label Text = "{Binding CountSlide}" HorizontalOptions="End" FontSize="Micro" Style="{StaticResource SubTitle_CellStackStyle}"/>
+                            </StackLayout>
+                        </StackLayout>                       
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <!--<Button Grid.Row="1" Text="Chiudi" Clicked="Handle_Clicked" Style="{StaticResource buttonStyle}" />-->
+       
+    </Grid>
+</ContentPage>

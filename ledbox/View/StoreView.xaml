@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ledbox.StoreView"
+    xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"  
+    ControlTemplate="{StaticResource LedboxTemplateNoStatusBar}"
+    BackgroundColor="#72736d" >
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Vertical">
+            <Label Text="{i18n:Translate store}" Style="{StaticResource lbl_Title}"/>
+            <!--<Label Text="Premi sull'icona per aggiornare la lista" Style="{StaticResource lbl_SubTitle}"/>-->
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Text="Reload" Icon="ic_loop_white_24dp.png" Command="{Binding ReloadListCommand}" />        
+    </ContentPage.ToolbarItems> 
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--<RowDefinition Height="0.9*"/>-->
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Style="{StaticResource bg_Style}"></Image>
+        <Frame Grid.Row="0" BackgroundColor="Transparent" Padding="0" VerticalOptions="EndAndExpand">
+             <Label Text = "from Tech4Sport Repository Online" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="12" TextColor="#99E5E5E5" FontAttributes="Bold,Italic" Margin="0,0,0,5"/>
+        </Frame>        
+
+        <ListView  x:Name="lstView" Grid.Row="0" RowHeight="70"
+                   Style="{StaticResource ListViewStyle}"                    
+                   ItemsSource="{Binding OStoreItem}"
+                   ItemTapped="Handle_ItemTapped" >
+                
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Frame Style="{StaticResource CellFrameStyle}">
+                            <StackLayout Style="{StaticResource CellStackStyle}">
+                                <Frame Grid.Column="0" Style="{StaticResource BarFrameStyle}" Padding="0" BackgroundColor="#99FFFFFF">
+                                    <Image  Source="store" HeightRequest="24" WidthRequest="24" HorizontalOptions="Center" VerticalOptions="Center" Margin="5,0"></Image>
+                                </Frame>
+                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="StartAndExpand">
+                                        <Label Text = "{Binding label_title}" Style="{StaticResource Title_CellStackStyle}" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="StartAndExpand">
+                                            <Label Text = "{Binding Version}" Style="{StaticResource SubTitle_CellStackStyle}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</ContentPage>

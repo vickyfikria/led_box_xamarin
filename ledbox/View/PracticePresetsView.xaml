@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ledbox.PracticePresetsView"
+    xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+     ControlTemplate="{StaticResource LedboxTemplateNoStatusBar}"
+    Title="{i18n:Translate store}"   
+    BackgroundColor="#72736d" >
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Vertical">
+            <Label Text="{i18n:Translate store}" Style="{StaticResource lbl_Title}"/>
+            <!--<Label Text="Premi sull'icona per aggiornare la lista" Style="{StaticResource lbl_SubTitle}"/>-->
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Text="Reload" Icon="ic_loop_white_24dp.png" Command="{Binding ReloadListCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--<RowDefinition Height="0.9*"/>-->
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Style="{StaticResource bg_Style}"></Image>
+     
+        <ListView  x:Name="lstView" Grid.Row="0" RowHeight="150"
+                   Style="{StaticResource ListViewStyle}"                    
+                   ItemsSource="{Binding OPracticePreset}"
+                   ItemTapped="Handle_ItemTapped" >
+                
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
+                        <Image Source="{Binding File}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="5"/>                                
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</ContentPage>

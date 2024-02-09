@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:ledbox;assembly=ledbox"
+             x:Class="ledbox.PlaylistItemView"
+             xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+             Title="{Binding Playlist.Title}"
+             ControlTemplate="{StaticResource LedboxTemplate}"
+             BackgroundColor="DarkCyan">
+
+            <NavigationPage.TitleView>  
+                
+                
+                            <!--TODO personalizzazioni della NavigationBar-->
+                            <!--<StackLayout Orientation="Horizontal" >
+                                <Button Image="ic_keyboard_arrow_left_white_24dp" Command="{Binding PlayPauseCommand}" Style="{StaticResource btn_TitleOK}"/>
+                                <Button Text="Ok" Style="{StaticResource btn_TitleOK}" Command="{Binding PlayPauseCommand}" WidthRequest="26" Padding="0" Margin="-7,0,0,0"/>-->
+                                <!--<Frame BackgroundColor="DarkCyan" Opacity="1"  CornerRadius="10" VerticalOptions="End" Margin="0,20,5,-10" HorizontalOptions="Start" WidthRequest="120">
+                                    <Label Text="{Binding Playlist.Title}" TextColor="White" Opacity="0.8" FontSize="18" FontAttributes="Bold" Margin="0,-15,0,0"/>
+                                </Frame>-->
+                            <!--</StackLayout>-->     
+                
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{Binding Playlist.Title}" Style="{StaticResource lbl_Title}" />
+                            <!--<Label Text="Premi sull'elemento per altri comandi" Style="{StaticResource lbl_SubTitle}" />-->
+                </StackLayout>                
+            </NavigationPage.TitleView>
+    
+            <ContentPage.ToolbarItems>  
+                <ToolbarItem Clicked="ChangeTitle_Clicked" Icon="ic_edit_white_24dp.png"  />
+                <ToolbarItem Clicked="AddFile" Icon="ic_add_white_24dp.png"  />
+            </ContentPage.ToolbarItems>   
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+      
+        <Image Style="{StaticResource bg_imageStyle}"></Image>
+
+        <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand" BackgroundColor="Transparent">            
+
+            <ListView  x:Name="lstItems"
+                       ItemTapped="lstItems_ItemTapped"
+                       ItemsSource="{Binding OFilePlaylist}"
+                       Style="{StaticResource ListViewStyle}" 
+                       >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                           <StackLayout Orientation="Horizontal"  >
+
+                                           <!--TODO modifiche grafiche per versione 2-->
+                                           <!--<Frame Style="{StaticResource BarFrameStyle}" Margin="0,5"></Frame>-->
+                                           <!--<Frame Style="{StaticResource CellFrameStyle2}" HorizontalOptions="FillAndExpand">-->
+                               
+                                
+                               <Frame Style="{StaticResource CellFrameStyle}" HorizontalOptions="FillAndExpand">                               
+                                    
+                                 <Grid BackgroundColor="Transparent" Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="0.6*" />
+                                        <RowDefinition Height="0.4*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.25*" />
+                                        <ColumnDefinition Width="0.48*" />
+                                        <ColumnDefinition Width="0.27*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Frame Grid.ColumnSpan="3" Grid.Row="1" BackgroundColor="#33FFFFFF" Margin="0" BorderColor="Transparent" ></Frame>
+
+                                    <!--Anteprima-->
+                                    <Frame Grid.ColumnSpan="3" Grid.Row="0" IsVisible="{Binding ControlMediaVisible}" Style="{StaticResource DeviceFrameStyle}" Margin="10,5,5,0" HorizontalOptions="StartAndExpand" VerticalOptions="End">
+                                        <Image  x:Name="image" Source="{Binding Previewpath}" HeightRequest="60" WidthRequest="180" HorizontalOptions="Center" VerticalOptions="Center" />
+                                    </Frame>
+
+                                    <!--Etichetta Immagine/Audio-->
+                                    <Label Text="{Binding TypeLabel}" Grid.Column="2" Grid.Row="0" TextColor="DarkCyan" FontSize="Micro" FontAttributes="Bold,Italic" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="0,5,10,0" />
+                                   
+                                    <!--Audio-->
+                                    <Label IsVisible="{Binding AudioMediaVisible}" TextColor="Black" Text="{Binding Filename}" Grid.ColumnSpan="3" Grid.Row="0" FontSize="16" FontAttributes="Bold, Italic" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" VerticalTextAlignment="Start" Margin="10,0,5,0" />
+                                    <Label IsVisible="{Binding AudioMediaVisible}" Grid.ColumnSpan="3" Grid.Row="1"  x:Name="lbl_duration_audio" Text="{Binding DurationLabel}" FontSize="Small" TextColor="Black" HorizontalTextAlignment="End" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Margin="10,0"/>
+ 
+                                    <!--Video-->
+                                    <StackLayout  Grid.ColumnSpan="3" Grid.Row="1" IsVisible="{Binding ControlMediaVisible}" Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                                        <Label x:Name="lbl_duration" Text="{Binding DurationLabel}" FontSize="Medium" TextColor="Black" HorizontalTextAlignment="End" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="10,0,0,0"/>
+                                        <Stepper Opacity="0.9" Increment="1" Value="{Binding Duration}" Style="{StaticResource StepperStyle}" Margin="0,0,5,0" HorizontalOptions="EndAndExpand" Minimum="1" Maximum="3599"></Stepper>
+                                    </StackLayout>  
+
+                                </Grid>
+                              </Frame>                               
+
+                                        <!--TODO Pulsante ELIMINA, DUPLICA, SPOSTA SU e GIU-->
+                                        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="Transparent" Margin="0" Padding="0">
+                                            <Button Grid.Row="0" Grid.Column="2" WidthRequest="30" HeightRequest="30" Image="ic_delete_white_24dp.png"  BackgroundColor="Transparent" Clicked="AddFile" VerticalOptions="Center"  Margin="0" />
+                                        </StackLayout>                               
+                                        <StackLayout HorizontalOptions="End" BackgroundColor="Transparent" Margin="0" Padding="0">
+                                            <Button  WidthRequest="30" HeightRequest="30" Image="ic_keyboard_arrow_up_white_24dp"    BackgroundColor="Transparent" Clicked="AddFile"   VerticalOptions="CenterAndExpand"  Margin="0" />
+                                            <Button  WidthRequest="30" HeightRequest="30" Image="ic_keyboard_arrow_down_white_24dp"  BackgroundColor="Transparent" Clicked="AddFile"   VerticalOptions="CenterAndExpand"   Margin="0" />
+                                        </StackLayout>-->                               
+                                
+                           </StackLayout>
+
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <Label Style="{StaticResource lbl_listCenter}" IsVisible="{Binding isRemote}" Text="{Binding lblStatus}"></Label>
+       <StackLayout Grid.Row="0"  IsVisible="{Binding isEmpty}" VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Style="{StaticResource lbl_listCenter}" Text="{i18n:Translate no_elements}"></Label>
+            <Label Style="{StaticResource lbl_listCenter}" Text="{i18n:Translate use_plus_button}"></Label>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" VerticalOptions="EndAndExpand" BackgroundColor="Transparent" Orientation="Horizontal" Padding="5" MinimumHeightRequest="50">
+            
+            <Button Image="{Binding Playlist.PlayPauseIconButton}" Text="{Binding Playlist.PlayPauseTextButton}" Command="{Binding PlayPauseCommand}"  HorizontalOptions="Start"   VerticalOptions="Center"
+                    Style="{StaticResource rounded_buttonStyle}" BackgroundColor="#F5A800" Margin="0" />
+            <Button Image="ic_stop_white_24dp" Text="{i18n:Translate stop}"   Command="{Binding StopCommand}"   HorizontalOptions="Start" VerticalOptions="Center"
+                    Style="{StaticResource rounded_buttonStyle}"   Margin="0" IsVisible="{Binding Playlist.IsVisibleStop}" BackgroundColor="#F5A800" />
+            <StackLayout Orientation="Vertical" IsVisible="{Binding Playlist.Counter_Visible}" Margin="0,0,0,15" HorizontalOptions="EndAndExpand">
+                <!--<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">-->               
+                    <Label Text="COUNTDOWN"  TextColor="White" Margin="0,5,0,0" FontSize="Micro" HorizontalTextAlignment="Center"/>
+                <!--</StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">-->
+                    <Label Text="{Binding Playlist.Counter_DurationMM,Mode=TwoWay}"  TextColor="White" FontSize="Medium"  HorizontalTextAlignment="Center" Margin="0,-10,0,0"/>
+                <!--</StackLayout>-->
+            </StackLayout>
+            <Button Image="ic_edit_white_24dp.png"  IsVisible="{Binding Playlist.Counter_Visible}" Command="{Binding OpenTimerCommand}"   HorizontalOptions="End"   VerticalOptions="Center"
+                    Style="{StaticResource rounded_buttonStyle}" WidthRequest="40" BackgroundColor="Transparent" Margin="0" />
+        </StackLayout>       
+     
+    </Grid>
+</ContentPage>

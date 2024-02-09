@@ -1,0 +1,146 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ReleaseVersion>0.2</ReleaseVersion>
+    <Configurations>Debug;Release;Test</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <AndroidPackageFormat>aab</AndroidPackageFormat>
+    <DebugType></DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+    <IntermediateOutputPath>obj\Test</IntermediateOutputPath>
+    <DebugType></DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Test</OutputPath>
+    <DefineConstants></DefineConstants>
+    <NoWarn></NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="MediaFilesManager" Version="1.0.2" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.0" />
+    <PackageReference Include="Xam.Plugin.Bluetooth" Version="1.0.0" />
+    <PackageReference Include="SharpZipLib" Version="1.2.0" />
+    <PackageReference Include="XLabs.Serialization.JSON" Version="2.3.0-pre05" />
+    <PackageReference Include="XLabs.Core" Version="2.3.0-pre05" />
+    <PackageReference Include="XLabs.IoC" Version="2.3.0-pre05" />
+    <PackageReference Include="XLabs.Platform" Version="2.3.0-pre05" />
+    <PackageReference Include="XLabs.Serialization" Version="2.3.0-pre05" />
+    <PackageReference Include="Xam.Plugin.WebView" Version="2.1.3" />
+    <PackageReference Include="Plugin.Multilingual" Version="1.1.6-beta" />
+    <PackageReference Include="Xam.Plugin.SimpleColorPicker" Version="1.0.5" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.35" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.41" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="match_score.cs" />
+    <Compile Remove="PlaylistRepository.cs" />
+    <Compile Remove="StatusBarView.xaml.cs" />
+    <Compile Remove="View\LoginView.cs" />
+    <Compile Remove="structure\WeightGym.cs" />
+    <Compile Remove="View\PracticeLedboxView.xaml.cs" />
+    <Compile Remove="View\PracticeRunView.xaml.cs" />
+    <Compile Remove="View\PracticeTabbedView.xaml.cs" />
+    <Compile Remove="View\ScanNetwork.xaml.cs" />
+    <Compile Remove="View\HybridWebView.cs" />
+    <Compile Remove="library\HybridWebView.cs" />
+    <Compile Remove="View\TimerPlaylistView.cs" />
+    <Compile Remove="CustomContentPage.cs" />
+    <Compile Remove="View\PlaylistModalView.cs" />
+    <Compile Remove="AppResource.Designer.cs" />
+    <Compile Remove="Resources\Resources %28copia%29.Designer.cs" />
+    <Compile Remove="Resources\Resources.Designer.cs" />
+    <Compile Remove="Resources\AppResources %28copia%29.Designer.cs" />
+    <Compile Remove="structure\PlaylistViewModel.cs" />
+    <Compile Remove="View\UploadView.xaml.cs" />
+    <Compile Remove="structure\PracticeItemViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="App_BACKUP_15796.xaml" />
+    <EmbeddedResource Remove="App_BASE_15796.xaml" />
+    <EmbeddedResource Remove="App_LOCAL_15796.xaml" />
+    <EmbeddedResource Remove="App_REMOTE_15796.xaml" />
+    <EmbeddedResource Remove="StatusBarView.xaml" />
+    <EmbeddedResource Remove="View\PracticeLedboxView.xaml" />
+    <EmbeddedResource Remove="View\PracticeRunView.xaml" />
+    <EmbeddedResource Remove="View\PracticeRunView.xaml" />
+    <EmbeddedResource Remove="View\PracticeTabbedView.xaml" />
+    <EmbeddedResource Remove="View\ScanNetwork.xaml" />
+    <EmbeddedResource Remove="Resources\Resources %28copia%29.resx" />
+    <EmbeddedResource Remove="Resources\Resources.resx" />
+    <EmbeddedResource Remove="View\UploadView.xaml" />
+    <EmbeddedResource Remove="AppResource.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="bg_matchscore.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\AppResources %28copia%29.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\AppResources.ru.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\AppResources.de.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\AppResources.hr.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\AppResources.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\AppResources.hu.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\CreditsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\AppResources.en.Designer.cs">
+      <DependentUpon>AppResources.en.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\AppResources.Designer.cs">
+      <DependentUpon>AppResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="View\CreditsView.xaml.cs">
+      <DependentUpon>CreditsView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppResource.resx" Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " />
+  </ItemGroup>
+</Project>

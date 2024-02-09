@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:ledbox;assembly=ledbox"
+             xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+             x:Class="ledbox.PracticeView"
+             ControlTemplate="{StaticResource LedboxTemplate}"
+             BackgroundColor="DarkSeaGreen">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Vertical">
+            <Label Text="{i18n:Translate practice}" Style="{StaticResource lbl_Title}"/>
+            <!--<Label Text="Premi sull'icona nuvola per scaricare nuovi esercizi" Style="{StaticResource lbl_SubTitle}"/>-->
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Text="Add" Icon="ic_playlist_add_white_24dp.png" Clicked="AddClicked" />
+        <ToolbarItem  x:Name="bt_store" Text="Store" Icon="ic_cloud_download_white_24dp.png" Clicked="Bt_Store_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        
+
+        <ListView  x:Name="lstView" Grid.Row="0" RowHeight="70"
+                   Style="{StaticResource ListViewStyle}"                    
+                   ItemsSource="{Binding OPractice}"
+                   ItemTapped="Handle_ItemTapped" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
+                        <ViewCell.ContextActions>
+                            <MenuItem Icon="ic_delete_white_24dp.png" Text="{i18n:Translate delete}" Clicked="DeleteClicked" IsDestructive="True" />
+                        </ViewCell.ContextActions>
+
+                        <Frame Style="{StaticResource CellFrameStyle}" BackgroundColor="{Binding BackgroundRow}">
+                            <StackLayout Style="{StaticResource CellStackStyle}">
+                                <Frame Style="{StaticResource BarFrameStyle}" BackgroundColor="{Binding BackgroundIcon}"></Frame>
+                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" >
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="StartAndExpand">
+                                        <Label Text = "{Binding Title}" Style="{StaticResource Title_CellStackStyle}"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand">
+                                        <Label Text = "{Binding CountSlide}"  Style="{StaticResource SubTitle_CellStackStyle}"/>
+                                        <!--<Label Text = "/" Style="{StaticResource SubTitle_CellStackStyle}"/>-->
+                                        <Label Text = "{Binding TotalDuration}" Style="{StaticResource SubTitle_CellStackStyle}"/>
+                                        
+                                        
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Image Style="{StaticResource bg_imageStyle}"></Image>
+
+        <StackLayout Grid.Row="0"  IsVisible="{Binding isEmpty}" VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Style="{StaticResource lbl_listCenter}" Text="{i18n:Translate no_elements}"></Label>
+            <Label Style="{StaticResource lbl_listCenter}" Text="{i18n:Translate use_plus_button}"></Label>
+        </StackLayout>
+
+
+       
+    
+    </Grid>
+</ContentPage>

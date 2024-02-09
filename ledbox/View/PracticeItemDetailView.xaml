@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:common="clr-namespace:ledbox;assembly=ledbox"
+             xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+    x:Class="ledbox.PracticeItemDetailView"  
+    ControlTemplate="{StaticResource LedboxTemplate}"
+    BackgroundColor="DarkSeaGreen">
+
+
+
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.13*" />
+            <RowDefinition Height="0.87*" />
+        </Grid.RowDefinitions>
+
+        <AbsoluteLayout Grid.Row="0" HeightRequest="55" VerticalOptions="Start" BackgroundColor="#52534A">-->
+            <!--<Button Text="SALVA"  TextColor="White" Command="{Binding DoneEditingCommand}" BackgroundColor="Transparent" Margin="-16,4,0,0" />-->
+        <!--</AbsoluteLayout>-->
+
+
+
+        <StackLayout Grid.Row="1" Margin="10,0" >
+      
+                <!--<Image Source="header.png" HeightRequest="30"/>-->
+                <!--<Entry x:Name="title" Text="{Binding itemPractice.Title}" TextColor="White" FontSize="Medium" BackgroundColor="#99e5e5e5"/>-->
+
+            <Label Text="{i18n:Translate image}" FontSize="Micro"  Margin="0,0,0,0" />
+            <StackLayout Orientation="Horizontal">
+                
+                <!--<RelativeLayout WidthRequest="140">-->
+                    <Image x:Name="image" Margin="0" Source="{Binding itemPractice.Filepath}"  HeightRequest="64" WidthRequest="128" />
+                    <!--<Button ImageSource="ic_edit_white_24dp.png" IsVisible="{Binding itemPractice.isImageEditable}" Clicked="EditFile" Style="{StaticResource rounded_smallbuttonStyle}"  Margin="110,-5" />-->
+                <!--</RelativeLayout>-->
+                <Button Text="{i18n:Translate choose}" Clicked="AddFile" BackgroundColor="#99E5E5E5"  VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+                   
+            </StackLayout>
+                <!--<Label Text="Res. max: 64 x 128 pixel" FontSize="Micro"   FontAttributes="Italic"  Margin="0,-10,0,5" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" VerticalTextAlignment="Start" />-->
+
+                <!--<BoxView HeightRequest="1" Color="#99E5E5E5" />-->
+                <Label Margin="0,0,0,-20" Text="Round" FontSize="Micro"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding itemPractice.RoundLabel}" Style="{StaticResource LabelStepperStyle}" TextColor="Black"/>
+                    <Stepper x:Name="round" Value="{Binding itemPractice.Round}"   Style="{StaticResource StepperStyle}" Maximum="9" Minimum="1" ></Stepper>
+                </StackLayout>
+
+                <BoxView HeightRequest="1" Color="#99E5E5E5" />
+                <Label Margin="0,0,0,-20"  Text="Setup" FontSize="Micro"  VerticalTextAlignment="End"/>                
+                <StackLayout Orientation="Horizontal">
+                    <Label  Text="{Binding itemPractice.RestMMLabel}" Style="{StaticResource LabelStepperStyle}" TextColor="Red"/>
+                    <Stepper x:Name="Rest_time" Value="{Binding itemPractice.Rest}" Style="{StaticResource StepperStyle}" Maximum="5940" Minimum="1" ></Stepper>
+                </StackLayout>
+                <Frame Style="{StaticResource CellFrameStyle}" Margin="4,0">
+                    <Picker x:Name="Rest_time_buzz" SelectedIndex="{Binding itemPractice.SoundRest}" Margin="0" >                       
+                    </Picker>
+                </Frame>    
+
+                <BoxView HeightRequest="1" Color="#99E5E5E5" />
+                <Label Margin="0,0,0,-20"  Text="Work time"   FontSize="Micro" VerticalTextAlignment="End" />                
+                <StackLayout Orientation="Horizontal">
+                    <Label  Text="{Binding itemPractice.WorkMMLabel}" Style="{StaticResource LabelStepperStyle}" TextColor="Green"/>
+                    <Stepper x:Name="Work_time" Value="{Binding itemPractice.Work}"  Style="{StaticResource StepperStyle}" Maximum="5940" Minimum="1" ></Stepper>
+                </StackLayout>
+                <Frame Style="{StaticResource CellFrameStyle}" Margin="4,0">
+                    <Picker x:Name="Work_time_buzz" SelectedIndex="{Binding itemPractice.SoundWork}" Margin="0" >                     
+                    </Picker>
+                </Frame>
+
+        <!--<Button Text="Ok" Margin="20" Command="{Binding DoneEditingCommand}" Style="{StaticResource buttonStyle}" />-->
+               
+            </StackLayout>
+    <!--</Grid>-->
+</ContentPage>

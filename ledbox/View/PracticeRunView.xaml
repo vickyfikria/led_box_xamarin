@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ledbox.PracticeRunView">
+    <ContentPage.Content>        
+        
+        <StackLayout>
+            <Label Text="{Binding Title}" x:Name="lbl_title" FontSize="Large"></Label>
+            <Image Source="ic_fast_forward_24dp.png" x:Name="img_image"></Image>
+            <Label Text="PROVA round" x:Name="lbl_round" FontSize="Large"></Label>
+            <Label Text="PROVA tempo" x:Name="lbl_time" FontSize="Large"></Label>
+            <Label Text="PROVA work" x:Name="lbl_status" FontSize="Large"></Label>
+            
+            
+            <Button Image="ic_fast_forward_white_24dp.png"    Text="" Style="{StaticResource buttonStyle}" />
+            <Button Image="ic_play_arrow_white_24dp.png" Text=""  Style="{StaticResource buttonStyle}" />
+            <Button Image="ic_stop_white_24dp.png"      Text=""   Style="{StaticResource buttonStyle}"  />
+            <Button Image="ic_fast_rewind_white_24dp.png"     Text=""  Style="{StaticResource buttonStyle}" />
+=======
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ledbox.PracticeRunView"
+    Title="PRACTICE"
+    ControlTemplate="{StaticResource LedboxTemplate}"
+    BackgroundColor="#999999">
+    
+    <!--annulata-->
+    
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.9*" />
+                <RowDefinition Height="0.1*" />
+            </Grid.RowDefinitions>
+>>>>>>> 9bed5a27ee4eab5e027d90a0ffd6c87ed1fed03f
+
+            <StackLayout Grid.Row="0" Margin="20" VerticalOptions="StartAndExpand" >
+                
+                <Label Text="{Binding Title}" x:Name="lbl_title" FontSize="Large"></Label>
+                <Image Source="ic_fast_forward_24dp.png" x:Name="img_image"></Image>
+                <Label Text="round" x:Name="lbl_round" FontSize="40"></Label>
+                <Label Text="tempo" x:Name="lbl_time" FontSize="60"></Label>
+                <Label Text="status" x:Name="lbl_status" FontSize="40"></Label>
+            </StackLayout>
+                
+            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Image="ic_fast_forward_white_24dp.png"    Text="" Style="{StaticResource buttonStyle}" />
+                    <Button Image="ic_play_arrow_white_24dp.png" Text="" Clicked="run" Style="{StaticResource buttonStyle}" />
+                    <Button Image="ic_stop_white_24dp.png"      Text=""  Clicked="stop" Style="{StaticResource buttonStyle}"  />
+                    <Button Image="ic_fast_rewind_white_24dp.png"     Text=""  Style="{StaticResource buttonStyle}" />
+                    <Button Text="Ok" Clicked="Bt_Ok_Clicked" Style="{StaticResource buttonStyle}" />
+            </StackLayout>
+
+           
+            
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

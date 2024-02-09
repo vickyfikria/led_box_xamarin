@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ledbox.BluetoothConnectionView"
+               xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"   
+               ControlTemplate="{StaticResource LedboxTemplateNoStatusBar}"
+             Title="BLUETOOTH"
+             BackgroundColor="DarkSlateBlue"  >
+
+            <NavigationPage.TitleView>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="BLUETOOTH" Style="{StaticResource lbl_Title}"/>
+                    <!--<Label Text="Premi sull'icona per effetuare una nuova ricerca" Style="{StaticResource lbl_SubTitle}"/>-->
+                </StackLayout>
+            </NavigationPage.TitleView>
+            <ContentPage.ToolbarItems>
+                <ToolbarItem Clicked="Bt_Scan_Clicked" Icon="ic_loop_white_24dp.png"  />
+            </ContentPage.ToolbarItems>
+    
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Image  Style="{StaticResource bg_imageStyle}"></Image>
+
+        <StackLayout 
+                RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                Padding="10,0" VerticalOptions="Start"  HorizontalOptions="Center" >
+
+                <Label x:Name="lbl_message" Text="{i18n:Translate choose_bluetooth}" TextColor="#CCCCCC" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="Center" Margin="10"></Label>
+                <Label x:Name="lbl_no_device" Text="{i18n:Translate no_device_bluetooth}" IsVisible="{Binding message_no_device}" TextColor="#CCCCCC" VerticalOptions="Center" FontSize="Small" HorizontalOptions="Center" Margin="10"></Label>
+                <Button Text="{i18n:Translate searching_bluetooth}" Clicked="Bt_Scan_Clicked"  HorizontalOptions="Center" IsVisible="{Binding message_no_device}"  VerticalOptions="Center"
+                    Style="{StaticResource rounded_buttonStyle}"  Margin="0" BackgroundColor="#F5A800"/>
+            
+            <ListView x:Name="listBluetoothDevices" RowHeight="70" 
+                          ItemTapped="Handle_ItemTapped"
+                          ItemsSource="{Binding Items}"
+                          Style="{StaticResource ListViewStyle}" >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+
+                            <Frame Style="{StaticResource CellFrameStyle}">
+                                <StackLayout Orientation="Horizontal" Style="{StaticResource CellStackStyle}">
+                                        <Frame Grid.Column="0" Style="{StaticResource BarFrameStyle}" Padding="0">
+                                            <Image  Source="ic_bluetooth_blue_700_24dp" HeightRequest="20" WidthRequest="20" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                                        </Frame>
+                                        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                        <Label Text = "{Binding name}" Style="{StaticResource Title_CellStackStyle}" />
+                                        <Label Text = "{Binding address}" Style="{StaticResource SubTitle_CellStackStyle}" HorizontalOptions="Start"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                                
+                        </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                
+     </StackLayout>
+
+    </Grid>
+
+</ContentPage>

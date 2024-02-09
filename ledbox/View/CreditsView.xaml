@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+             x:Class="ledbox.CreditsView"
+             ControlTemplate="{StaticResource LedboxTemplateNoStatusBar}"
+             Title="{i18n:Translate about_us}"
+             BackgroundColor="#72736d"  >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+        <Image Grid.Row="0" Style="{StaticResource bg_Style}" ></Image>
+
+        <StackLayout Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Padding="10">
+
+            <Image Source="icon.png"  HeightRequest="96" WidthRequest="96" BackgroundColor="Transparent"/>
+            <Image Source="logo.png" Margin="20,10,20,0" HeightRequest="48" />
+        
+            <StackLayout Orientation="Horizontal" Margin="0,-10" HorizontalOptions="Center">
+                <Button Text="{i18n:Translate version}"                    TextColor="White" FontSize="Small" Clicked= "EnableTestingMode" BackgroundColor="Transparent" BorderWidth="0" Margin="0" Padding="0"></Button>
+                <Button x:Name="AppVersion"  Text="{Binding AppVersion}"  TextColor="White" FontSize="Small" Clicked= "EnableTestingMode" BackgroundColor="Transparent" BorderWidth="0" WidthRequest="40" Margin="0" Padding="0"></Button>
+            </StackLayout>
+     
+            <Label FontSize="Micro" TextColor="White"  Margin="20,-10,20,40" HorizontalOptions="Center">Copyright 2023</Label>
+
+            <Label FontSize="Medium" TextColor="White" FontAttributes="Bold" Margin="20,20,20,0" HorizontalOptions="Center">TECH4SPORT SRL</Label>
+            <!--<Label FontSize="Micro" TextColor="White" Margin="10,0" HorizontalOptions="Center">Via Persicetana Vecchia n 7/6</Label>-->
+            <Label FontSize="Micro" TextColor="White" Margin="20,0" HorizontalOptions="Center">Bologna (ITALY)</Label>
+            <Button Style="{StaticResource rounded_buttonStyle}" Margin="0,30,0,10" Text="www.tech4sport.com" Clicked="GoToSite" BackgroundColor="#F5A800" Padding="20,0"/>
+
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>

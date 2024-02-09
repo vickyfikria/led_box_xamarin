@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"                
+             xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+             x:Class="ledbox.ConnectionView"            
+             BackgroundColor="#52534A" >
+    
+    
+    
+    
+    <!--DEPRECATA-->
+    
+    
+    
+    
+    <StackLayout Margin="60">
+            <Image Source="logo.png" IsVisible="True" Margin="10" HorizontalOptions="Center"/>
+            <Label x:Name="lbl_message" Text="" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" TextColor="White"></Label>
+            <Frame x:Name="frame_input"  IsVisible="false" Style="{StaticResource CellFrameStyle}" Margin="0,0,0,20">    
+                <Entry x:Name="input" />
+            </Frame>
+            <ProgressBar x:Name="progressbar" ProgressColor="#F5A800" Visual="Material" HeightRequest="30"></ProgressBar>
+            <Button x:Name="bt_cancel" Text="{i18n:Translate cancel}" Clicked="Bt_Cancel_Clicked" Style="{StaticResource rounded_buttonStyle}" BackgroundColor="#F5A800"/>
+            <Button x:Name="bt_ok" Text="Ok" Clicked="Bt_OK_Clicked" IsVisible="false" Style="{StaticResource rounded_buttonStyle}" BackgroundColor="#F5A800"/>
+    </StackLayout>
+
+</ContentPage>

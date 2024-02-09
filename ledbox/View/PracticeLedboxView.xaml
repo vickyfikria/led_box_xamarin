@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:ledbox;assembly=ledbox"
+             xmlns:i18n="clr-namespace:ledbox;assembly=ledbox"
+             x:Class="ledbox.PracticeLedboxView"
+             ControlTemplate="{StaticResource LedboxTemplate}"
+             BackgroundColor="DarkSeaGreen">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Text="Reload" Icon="ic_loop_white_24dp.png" Clicked="reloadList" />
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        
+
+        <ListView  x:Name="lstView" Grid.Row="0" RowHeight="70"
+                   Style="{StaticResource ListViewStyle}"                    
+                   ItemsSource="{Binding OPractice}"
+                   ItemTapped="Handle_ItemTapped" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Style="{StaticResource CellFrameStyle}">
+                            <StackLayout Style="{StaticResource CellStackStyle}">
+                                <Frame Style="{StaticResource BarFrameStyle}" BackgroundColor="{Binding BackgroundIcon}"></Frame>
+                                <Label Text = "{Binding Title}" Style="{StaticResource Title_CellStackStyle}" />
+
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10" HorizontalOptions="EndAndExpand">
+                                        <Button ImageSource="{Binding PlayPauseIconButton}" Command="{Binding PlayPauseCommand}" BackgroundColor="#52534A"
+                                                Style="{StaticResource rounded_buttonStyle}" WidthRequest="40"  Margin="0" />
+                                        <Button ImageSource="ic_stop_white_24dp" Command="{Binding StopCommand}" BackgroundColor="#52534A"
+                                                Style="{StaticResource rounded_buttonStyle}" WidthRequest="40"  Margin="0" />
+                                </StackLayout>
+
+                      
+                            </StackLayout>
+                        </Frame>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Style="{StaticResource lbl_listCenter}" IsVisible="{Binding isEmpty}" Text="{Binding lblStatus}"></Label>
+        <Image Style="{StaticResource bg_imageStyle}"></Image>
+    
+    </Grid>
+</ContentPage>
